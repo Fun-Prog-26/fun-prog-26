@@ -1,0 +1,264 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[printsolution=true]{exercises}
+% for exercise 
+%% Change this for title information 
+\newcommand\ExTitle{Recursive Functions}
+
+\newcommand\fullExTitle{Exercises\\ \ExTitle }
+\newcommand\footerExTitle{\ExTitle \ -\  Exercises }
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{\footerExTitle} % other info in "inner" position of footer line
+
+% \usepackage[mathrm,colour,cntbysection]{czt}
+  
+\begin{document}
+\begin{Huge}
+	\begin{center}
+	\fullExTitle
+	\end{center}
+\end{Huge}
+
+\begin{exercise} 
+Define a recursive function \\
+\begin{lstlisting}[language=Haskell]
+  sumdown :: Int -> Int
+\end{lstlisting}
+that returns the sum of all the non-negative integers down to zero. For example:
+\begin{lstlisting}[language=Haskell]
+sumdown 3
+\end{lstlisting}
+will return $ 3 +2+1+0 = 6$
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+sumdown :: Int -> Int 
+sumdown 0 = 0
+sumdown n = n + sumdown (n-1) 
+\end{lstlisting}
+\end{solution}
+
+
+\begin{exercise}
+Define the \textbf{\textit{exponention}} (to the power of) function for non-negative numbers using the same pattern of recursion as the multiplication operator in notes, and show how the expression 
+\begin{lstlisting}[language=Haskell]
+  exponention 2 3
+\end{lstlisting}
+is evaluated using your definition.
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+exponention :: Int -> Int -> Int
+exponention 0 _ = 0
+exponention _  0 = 1
+exponention m n = m * exponention m  (n-1)
+\end{lstlisting}
+\end{solution}
+
+\pagebreak
+\begin{exercise}
+
+Define a recursive function \\
+\begin{lstlisting}[language=Haskell]
+fibonacci :: Int -> Int
+\end{lstlisting}
+that calculates the Fibonacci number as per the following definition \\
+$
+F_{0} = 0, F_{1} = 1 \\
+F_{n} = F_{n-1} + F_{n-2}
+$
+
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+fibonacci :: Integral a => a -> a 
+fibonacci 0 = 0
+fibonacci 1 = 1
+fibonacci n = fibonacci (n-1) + fibonacci (n-2) 
+\end{lstlisting}
+\end{solution}
+
+\begin{exercise}
+
+Define a recursive function \\
+\begin{lstlisting}[language=Haskell]
+myInit :: [a] -> [a]
+\end{lstlisting}
+that removes the last element from a non-empty list. Construct the definition using the 5 step process as discussed in lectures.
+
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+myInit :: [a] -> [a]
+myInit [x] = []
+myInit (x:xs) = x: myInit xs
+\end{lstlisting}
+\end{solution}
+\pagebreak
+\begin{exercise}
+Without looking at the definitions from the standard Prelude, define the following library functions on lists using recursion: 
+\begin{enumerate}
+	\item Decide if all logical values in a list are \textbf{\textit{True}}
+	\begin{lstlisting}[language=Haskell]
+myAnd :: [Bool] -> Bool
+	\end{lstlisting}
+	\item Concatenate a list of lists
+\begin{lstlisting}[language=Haskell]
+myConcat :: [[a]] -> [a]
+\end{lstlisting}
+	\item Produce a list with \textbf{\textit{n}} identical elements
+\begin{lstlisting}[language=Haskell]
+myReplicate :: Int -> a -> [a]
+\end{lstlisting}
+	\item Select the $n^{th}$ element of a list
+\begin{lstlisting}[language=Haskell]
+myNth :: [a]-> Int -> a
+\end{lstlisting}
+	\item Decide if an value is an element of a list
+\begin{lstlisting}[language=Haskell]
+myElem  :: Eq a => a -> [a] -> Bool
+\end{lstlisting}
+ \end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\begin{enumerate}
+	\item Decide if all logical values in a list are \textbf{\textit{True}}
+	\begin{lstlisting}[language=Haskell]
+myAnd :: [Bool] -> Bool
+myAnd [] = True
+myAnd (b:bs) = b && myAnd (bs)
+	\end{lstlisting}
+	\item Concatenate a list of lists
+\begin{lstlisting}[language=Haskell]
+myConcat :: [[a]] -> [a] 
+myConcat []  = []
+myConcat (x:xs)  = x ++ (myConcat xs)
+\end{lstlisting}
+	\item Produce a list with \textbf{\textit{n}} identical elements
+\begin{lstlisting}[language=Haskell]
+myReplicate :: Int -> a-> [a]
+myReplicate 0 _ = []
+myReplicate n x = x: myReplicate (n-1) x
+\end{lstlisting}
+	\item Select the $n^{th}$ element of a list
+\begin{lstlisting}[language=Haskell]
+myNth ::[a] -> Int -> a
+myNth (x:xs)  0     = x
+myNth (x:xs) n = myNth xs (n-1)
+\end{lstlisting}
+	\item Decide if an value is an element of a list
+\begin{lstlisting}[language=Haskell]
+myElem :: Eq a => a -> [a] -> Bool
+myElem x [] = False
+myElem  x' (x:xs)  | x' == x = True
+                   | otherwise = myElem x' xs
+\end{lstlisting}
+ \end{enumerate}
+ \end{solution}
+ 
+ \begin{exercise}
+Using the five-step process, construct the library functions that: 
+\begin{enumerate}
+	\item calculate the \textbf{\textit{sum}} of a list of numbers;
+	\item \textbf{\textit{take}} a given number of elements from the start of a list;
+	\item select the \textbf{\textit{last}} element of non-empty list.
+\end{enumerate}
+
+\end{exercise}
+
+\begin{solution}
+\begin{enumerate}
+	\item calculate the \textbf{\textit{sum}} of a list of numbers;
+\begin{lstlisting}[language=Haskell]
+sum' :: Num a => [a] -> a
+sum' [] = 0
+sum' (x:xs) = x + sum xs
+\end{lstlisting}
+	\item \textbf{\textit{take}} a given number of elements from the start of a list;
+	\begin{lstlisting}[language=Haskell]
+take' :: Int-> [b] -> [b]
+take' 0 _ = []
+take' _ [] = []
+take' n (x:xs) = x: take' (n-1) xs
+\end{lstlisting}
+	\item select the \textbf{\textit{last}} element of non-empty list.
+	\begin{lstlisting}[language=Haskell]
+last' :: [a] -> a
+last' [x] = x
+last' (_:xs) = last xs
+\end{lstlisting}
+\end{enumerate}
+\end{solution}
+\pagebreak
+\begin{exercise}
+Define a recursive function 
+\begin{lstlisting}[language=Haskell]
+  merge :: Ord a => [a] -> [a] -> [a]
+\end{lstlisting}
+that merges two sorted lists to give a single sorted list. 
+Note : Your definition should not use other functions on sorted lists such as  \textbf{\textit{insert}} or  \textbf{\textit{isort}}, but should be defined using explicit recursion.
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+merge :: Ord a => [a] -> [a] -> [a]
+merge xs [] = xs
+merge [] ys = ys
+merge (x:xs) (y:ys) | x <= y = x: merge xs (y:ys)
+                    | otherwise = y: merge (x:xs) ys
+\end{lstlisting}
+\end{solution}
+\pagebreak
+\begin{exercise}
+Using \textbf{\textit{merge}}, define a function 
+\begin{lstlisting}[language=Haskell]
+msort :: Ord a => [a] -> [a] 
+\end{lstlisting}
+that implements \textit{merge sort}, in which the empty list and singleton lists are already sorted, and any other list is sorted by merging together the two lists that result from sorting the two halves of the list separately.\\ \\
+\textbf{\textit{Hint 1:}} First define a function 
+\begin{lstlisting}[language=Haskell]
+halve :: [a] -> ([a] , [a])
+\end{lstlisting}
+that splits a list into two halves whose lengths differ by at most one. \\
+\textbf{\textit{Hint 2:}} You can use the following functions (though you may not need to) 
+\begin{lstlisting}[language=Haskell]
+fst :: (a,b) -> a
+snd :: (a,b) -> b
+fst (x,y) = x
+snd (x,y) = y
+\end{lstlisting}
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+halve :: [a] -> ([a], [a]) 
+halve [x] = ([x], [])
+halve xs = (firsthalf, secondhalf)
+   where 
+    firsthalf = take half xs
+    secondhalf = drop half  xs
+    half = div (length  xs) 2
+
+msort :: Ord a => [a] -> [a]    
+msort [] = [] 
+msort [x] = [x]
+msort xs = merge  (msort left)  (msort right )
+    where 
+     (left, right) = halve xs
+\end{lstlisting}
+\end{solution}
+
+\end{document}

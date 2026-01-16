@@ -1,0 +1,180 @@
+\documentclass{article}
+
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[printsolution=false]{exercises}
+\usepackage{todonotes}  %--put in noanswer when solutions are not to be shown
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\lstset{frame=tb,
+  language=Haskell,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+  }
+%% Change this for title information 
+\newcommand\ExTitle{Function Application and Function Composition}
+
+\newcommand\fullExTitle{Exercises \\ \ExTitle }
+\newcommand\footerExTitle{\ExTitle -\  Exercises }
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{\footerExTitle} % other info in "inner" position of footer line
+
+%\usepackage[mathrm,colour,cntbysection]{czt}
+
+\begin{document}
+
+\begin{Huge}
+	\begin{center}
+	\fullExTitle
+	\end{center}
+\end{Huge}
+
+\begin{exercise}
+
+Write \textbf{bigCubes} that takes a list and returns a list of cubes that are $>$ 500
+\begin{lstlisting}
+bigCubes :: [Int] -> [Int]
+  \end{lstlisting}
+\end{exercise}
+
+\begin{solution}
+  \begin{lstlisting}
+bigCubes :: [Int] -> [Int]
+bigCubes xs = filter (>500) $ map (^3) xs
+  \end{lstlisting}
+\end{solution}
+
+\begin{exercise} 
+  Write \textbf{lottaBiggest} that takes a list and replicates the largest element 4 times. 
+  \begin{lstlisting}
+  lottaBiggest :: [Int] -> [Int]
+  e.g.
+  lottaBiggest [2,5,3,1] = [5,5,5,5]
+  \end{lstlisting}
+  \textbf{Hint:} You can use the \textit{maximum} function that returns the maximum value in a numeric list. 
+\end{exercise}
+
+\begin{solution}
+  Using \$  :
+  \begin{lstlisting}   
+lottaBiggest :: [Int] -> [Int]
+lottaBiggest xs = replicate 4  $ maximum xs
+      \end{lstlisting}
+
+or (using function composition)
+\begin{lstlisting}
+lottaBiggest' :: [Int] -> [Int]
+lottaBiggest'  = replicate 4  . maximum 
+          \end{lstlisting}
+\end{solution}
+
+
+\begin{exercise} 
+Write \textbf{powers} that takes a number and creates a list of that number squared, cubed, and quadrupled. 
+\begin{lstlisting}[language=Haskell]
+e.g. powers 2 = [4,8,16]
+  \end{lstlisting}
+\end{exercise} 
+
+\begin{solution}
+  \begin{lstlisting}[language=Haskell]
+
+powers:: Int -> [Int]
+powers x =  map ($x) [(^2),(^3) ,(^4) ] 
+\end{lstlisting}
+\end{solution}
+
+
+\begin{exercise}
+Given  \textbf{process} that takes a list of numbers, filters out the negative numbers, doubles the remaining numbers, and returns the sum of the doubled numbers:
+\begin{lstlisting}[language=Haskell]
+  process x = sum (map double (filter (>0) x))
+\end{lstlisting}  
+Rewrite \textbf{process} using function composition and eliminating the \textit{x} parameter.
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+process :: [Int] -> Int
+process = sum . map double . filter (>0)
+\end{lstlisting}
+\end{solution}
+
+\pagebreak
+\begin{exercise}
+  Given 
+  \begin{lstlisting}
+  compute x y = length (take x (filter even y)) 
+  \end{lstlisting}
+  which takes a number and a list of numbers, filters out the even numbers, and returns the length of the first x even numbers.
+  Rewrite \textbf{compute} using function composition and eliminating the \textit{y} parameter.
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+compute :: Int -> [Int] -> Int
+compute x = length . take x . filter even
+\end{lstlisting}
+\end{solution}
+
+\begin{exercise}
+Assume people are dining. We have a list of tip percents (assume people tip at different rates):\\
+\begin{lstlisting}[language=Haskell]
+e.g.  pcts = [0.15, 0.2, 0.21]  
+\end{lstlisting} 
+We have a list of bills (what people owe, minus tip)  \\
+\begin{lstlisting}[language=Haskell]
+e.g. amts = [20.5, 30, 25] 
+\end{lstlisting} 
+Write \textbf{calcBill }that takes amts and pcts and calculates what each person will pay, based on their amt and pct. 
+Then apply a 4\% tax rate.
+
+\begin{lstlisting}[language=Haskell]
+calcBillamtspcts :: [Float] -> [Float] -> Float
+calcBillamtspcts  [20.5, 30, 25] [0.15, 0.2, 0.21]   = [24.518,37.44,31.46]
+\end{lstlisting} 
+\end{exercise} 
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+calcBillamtspcts :: [Float] -> [Float] -> [Float]
+calcBillamtspcts amts tips =map (*1.04) $ zipWith (+) amts $ 
+                                                      zipWith (*) amts  tips
+   -- rightmost calculates tips , next adds tips, then add 4%
+\end{lstlisting} 
+\end{solution}
+
+
+
+
+% \newpage
+% \begin{Huge}
+% \begin{center}
+% Solutions
+% \end{center}
+% \end{Huge}
+% \shipoutAnswer
+
+\end{document}

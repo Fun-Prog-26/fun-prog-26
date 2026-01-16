@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[printsolution=true]{exercises}
+%% Change this for title information 
+\newcommand\ExTitle{State Monads}
+
+\newcommand\fullExTitle{exercises \\ \ExTitle }
+\newcommand\footerExTitle{\ExTitle -\  exercises }
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{\footerExTitle} % other info in "inner" position of footer line
+
+%\usepackage[mathrm,colour,cntbysection]{czt}
+
+\begin{document}
+\begin{Huge}
+	\begin{center}
+	\fullExTitle
+	\end{center}
+\end{Huge}
+
+\begin{exercise}
+Give the example of a stack in slide deck, write a similar program to manage a Queue structure. A Queue can be seen as a List of elements. The main functions of a Queue are 
+\begin{enumerate}
+  \item \textit{\textbf{enQueue}} (an element is added to the end of the list - similar to \textit{\textbf{push}} in stack)
+  \item \textit{\textbf{deQueue}} (an element is returned from the top of the list - similar to \textit{\textbf{pop}} in stack)
+\end{enumerate}
+Write a short program to test the operation of the queue (similar to the example for the stack)
+
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]-- Define a Queue type
+	type Queue a = [a]
+	
+	-- Add an element to the end of the queue
+	enQueue :: a -> Queue a -> Queue a
+	enQueue x q = q ++ [x]
+	
+	-- Remove an element from the front of the queue
+	deQueue :: Queue a -> (Maybe a, Queue a)
+	deQueue []     = (Nothing, [])         -- Empty queue case
+	deQueue (x:xs) = (Just x, xs)
+	
+	-- Function to display the queue
+	printQueue :: Show a => Queue a -> IO ()
+	printQueue q = putStrLn $ "Queue: " ++ show q
+	
+	-- Test program
+	main :: IO ()
+	main = do
+		-- Start with an empty queue
+		let q0 = [] :: Queue Int
+		printQueue q0
+	
+		-- Enqueue some elements
+		let q1 = enQueue 10 q0
+		let q2 = enQueue 20 q1
+		let q3 = enQueue 30 q2
+		printQueue q3
+	
+		-- Dequeue an element
+		let (e1, q4) = deQueue q3
+		putStrLn $ "Dequeued: " ++ show e1
+		printQueue q4
+	
+		-- Dequeue another element
+		let (e2, q5) = deQueue q4
+		putStrLn $ "Dequeued: " ++ show e2
+		printQueue q5
+\end{lstlisting}
+\end{solution}	
+
+
+
+\end{document}

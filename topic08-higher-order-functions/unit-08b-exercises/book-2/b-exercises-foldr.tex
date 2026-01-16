@@ -1,0 +1,150 @@
+\documentclass{article}
+
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[printsolution=true]{exercises}
+%% Change this for title information 
+
+\usepackage{color}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+\lstset{frame=tb,
+  language=Haskell,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+  }
+\newcommand\ExTitle{Exercises on $foldr$}
+
+\newcommand\fullExTitle{Exercises \\ \ExTitle }
+\newcommand\footerExTitle{\ExTitle -\  Exercises }
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{\footerExTitle} % other info in "inner" position of footer line
+
+
+  
+\begin{document}
+\begin{Huge}
+	\begin{center}
+	\fullExTitle
+	\end{center}
+\end{Huge}
+
+\begin{exercise} 
+Using the higher-order function $foldr$,  define a function $sumsq$ which takes an
+integer $n$ as its argument and returns the sum of the squares of the first $n$
+integers. That is to say,
+$sumsq n = 1^{2} + 2^{2} + 3^{2} + . . . + n^{2} $. \\
+(answer given to start you off)
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+sumsq :: Integral a => a -> a
+sumsq n = foldr op 0 [1..n]
+                 where op x y = x*x + y
+\end{lstlisting}
+\end{solution}
+
+\begin{exercise} 
+Define $lengthr$, which returns the number of elements in a list, using $foldr$. 
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+lengthr :: [Int] -> Int
+lengthr = foldr (\x y -> 1 + y) 0
+\end{lstlisting}
+
+\end{solution}
+
+\begin{exercise}  
+Define $minlist$, which returns the smallest integer in a non-empty list of integers,
+using $foldr1$ . ($foldr1$ is a Prelude function - look it up yourself or continue and come back to this)
+\end{exercise} 
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+minlistr ::  [Int] -> Int
+minlistr  = foldr1 min\end{lstlisting}
+\end{solution}
+
+\pagebreak
+\begin{exercise} 
+Define $myreverse$, which reverses a list, using $foldr$.
+\end{exercise} 
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+myreverse :: [a] -> [a]
+myreverse = foldr (\x y -> y ++ [x]) []
+\end{lstlisting}
+\end{solution}
+
+
+\begin{exercise} 
+Using $foldr$ , define a function remove which takes two strings as its arguments
+and removes every letter from the second list that occurs in the first list. For
+example, 
+\begin{lstlisting}[language=Haskell]
+remove "first" "second" = "econd".
+\end{lstlisting}
+\textbf{\textit{Hint:}} Use a helper function in your lambda 
+\end{exercise} 
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell][difficulty=5]
+myremove :: Eq a => [a] -> [a] -> [a]
+myremove xs  =  foldr (\y processed -> (aux y xs) ++ processed)  [] 
+                where aux :: Eq a => a -> [a] ->  [a]
+                      aux x ys | x `elem` ys = []
+                                   | otherwise   = [x]
+\end{lstlisting}
+\end{solution}
+
+
+\begin{exercise} 
+The function $remdups$ removes adjacent duplicates from a list. For example,
+\begin{lstlisting}[language=Haskell]
+remdups [1, 2, 2, 3, 3, 3, 1, 1] = [1, 2, 3, 1]
+\end{lstlisting}
+
+Define $remdups$ using $foldr$ (and using a helper method). 
+\end{exercise} 
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+remdupsr :: Eq a => [a] -> [a]
+remdupsr []     = []
+remdupsr ys = foldr joinr [] ys
+        
+joinr :: Eq a => a -> [a] -> [a]
+joinr x []             = [x]
+joinr x xs
+    | x == head xs = xs
+    | otherwise    = [x] ++ xs        
+\end{lstlisting}
+\end{solution}
+%
+
+\end{document}

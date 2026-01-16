@@ -1,0 +1,398 @@
+\documentclass{article}
+\usepackage[english]{babel}
+\usepackage{fancyhdr}   
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{tikz-qtree}
+\usepackage{tikz-qtree-compat}
+\usepackage{todonotes}
+
+\usepackage[printsolution=true]{exercises}
+%DeclareCaptionType{mytype}[Typename][List of mytype]
+%\newenvironment{myenv}{}{}
+
+\tikzset{edge from parent/.append style={->}}
+
+\newcommand\ExTitle{Declaring Types, Trees}
+
+\newcommand\fullExTitle{Exercises \\ \ExTitle }
+\newcommand\footerExTitle{\ExTitle -\  Exercises and Solutions}
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{\footerExTitle} % other info in "inner" position of footer line
+
+\begin{document}
+\begin{Huge}
+	\begin{center}
+	\fullExTitle
+	\end{center}
+\end{Huge}
+
+\begin{exercise}
+  Looking at the following  definition of $tail$ :\\
+  
+  \begin{lstlisting}{haskell}
+   tail :: [a] -> [a]
+   tail [] = []
+   tail (_:xs) = xs
+  \end{lstlisting}
+  Rewrite this (call it \textit{safetail}) using: 
+  \begin{enumerate}
+    \item (\textit {safetailMaybe}) Maybe (returning Nothing when called on empty list)
+    \item (\textit {safetail''}) Either (returning error message when called on empty list)
+  \end{enumerate}
+  \end{exercise}
+  \begin{solution}
+    \begin{enumerate}
+     \item 
+      \begin{lstlisting}{haskell}
+        safetailMaybe :: [a] ->  Maybe  [a]
+        safetailMaybe [] =    Nothing
+        safetailMaybe xs =    Just (tail xs )
+      \end{lstlisting}
+  
+      \item     
+      \begin{lstlisting}{haskell}
+        safetailEither :: Eq a =>  [a]  -> Either String  [a]
+        safetailEither xs = if null xs then Left  "Cannot have tail of empty list"
+                                      else Right (tail xs)
+  \end{lstlisting}
+  \end{enumerate}
+  \end{solution}
+
+\begin{exercise}
+Referring to the abstract machine written in class notes:
+\begin{lstlisting}[language=Haskell]
+-- Haskell Code for Abstract Machine example, Hutton, Chapter 7/
+data Expr = Val Int | Add Expr Expr | Mult Expr Expr
+data Op = EVAL Expr | ADD Int | MULT Int
+
+type Cont = [Op]
+
+eval :: Expr -> Cont -> Int
+eval (Val n)    c = exec c n
+eval (Add x y)  c = eval x (EVAL y: c)
+
+exec :: Cont -> Int -> Int 
+exec []             n = n
+exec (EVAL y: c)    n = eval y (ADD n: c)
+exec (ADD n : c)    m = exec c (n + m)
+
+val :: Expr -> Int
+val e = eval e [] 
+\end{lstlisting}
+Write out the evaluation of the following Expressions
+
+\begin{enumerate}
+  \item
+  \begin{lstlisting}[language=Haskell]
+    Val 1
+  \end{lstlisting}
+
+  \item
+  \begin{lstlisting}[language=Haskell]
+    Add (Val 1) (Val 2) 
+  \end{lstlisting}
+  
+  \item
+  \begin{lstlisting}[language=Haskell]
+    (Add (Add (Val 2) (Val 3) ) (Val 4))
+  \end{lstlisting}
+\end{enumerate}
+\end{exercise}
+\begin{solution}
+  \begin{enumerate}
+    \item
+\textbf{Val 1}
+  \begin{lstlisting}[language=Haskell]
+    value Val 1 = eval Val 1 []
+                = exec [] 1
+                = 1
+  \end{lstlisting}
+\item
+  \textbf{Add (Val 1) (Val 2) }
+  \begin{lstlisting}[language=Haskell]
+    value (Add (Val 1) (Val 2))  
+                = eval (Add (Val 1) (Val 2))  []
+                = eval (Val 1) (EVAL (Val 2) : [])
+                = eval (Val 1) [EVAL (Val 2)]  --prepend to an empty list
+                = exec [EVAL (Val 2)]  1
+                = eval (Val 2) [ADD 1]
+                = exec [ADD 1] 2
+                = exec [] (1 + 2)
+                = 3
+
+  \end{lstlisting}  
+  
+\item
+  \textbf {(Add (Add (Val 2) (Val 3) ) (Val 4))}
+  \begin{lstlisting}[language=Haskell]
+  value (Add (Add (Val 2) (Val 3) ) (Val 4)) 
+                = eval (Add (Add (Val 2) (Val 3) ) (Val 4)) []
+                = eval (Add (Val 2) (Val 3) [EVAL Val 4]
+                = eval Val 2   [EVAL Val 3, EVAL Val 4]
+                = exec [EVAL Val 3, EVAL Val 4] 2
+                = eval Val 3 [ADD 2, EVAL Val 4]
+                = exec [ADD 2, EVAL Val 4] 3
+                = exec [EVAL Val 4] (2 + 3)
+                = exec [EVAL Val 4]  5
+                = eval Val 4 [ADD 5]
+                = exec [] (5 + 4)
+                = 9
+  \end{lstlisting}
+\end{enumerate}  
+
+\end{solution}
+\begin{exercise}
+The abstract machine (as per above) only implements \textbf{\textit{additon}} . Show how you would extend this implementation to implement mutliplication. 
+\end{exercise}
+
+\begin{solution}
+  The abstract machine is extended as follows
+\begin{lstlisting}[language=Haskell]
+data Expr = Val Int | Add Expr Expr | Mult Expr Expr
+data Op = EVALA Expr | EVALM Expr | ADD Int | MULT Int
+
+type Cont = [Op]
+
+eval :: Expr -> Cont -> Int
+eval (Val n)    c = exec c n
+eval (Add x y)  c = eval x (EVALA y: c)
+eval (Mult x y) c = eval x (EVALM y: c)
+
+exec :: Cont -> Int -> Int 
+exec []      n = n
+exec (EVALA y: c)   n = eval y (ADD n: c)
+exec (EVALM y: c)   n = eval y (MULT n:c) 
+exec (ADD n : c)    m = exec c (n + m)
+exec (MULT n : c)   m = exec c (n * m)
+
+val :: Expr -> Int
+val e = eval e []
+\end{lstlisting}
+\end{solution}
+
+\begin{exercise}
+(Using the Nat example from earlier) \\
+In a similar manner to the function \textit{\textbf{add}}, define a recursive multiplication function 
+\begin{lstlisting}[language=Haskell]
+mult :: Nat -> Nat -> Nat
+\end{lstlisting}
+for the recursive type of natural numbers. \\
+\textit{\textbf{Hint:}} Make use of \textit{\textbf{add}} in your definition
+\end{exercise}
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+mult m Zero     = Zero   
+mult m (Succ n) = add m (mult m n)
+\end{lstlisting}
+\end{solution}
+
+\begin{exercise}
+Using the following (as seen in class) : 
+\begin{lstlisting}[language=Haskell]
+data Ordering = LT | EQ | GT
+\end{lstlisting}
+together with a function 
+\begin{lstlisting}[language=Haskell]
+compare :: Ord a => a -> a -> Ordering
+\end{lstlisting}
+that decides if one value if an ordered type is less than (LT), equal to (EQ), or greater than (GT) another value. Using this function, redefine the function 
+\begin{lstlisting}[language=Haskell]
+occurs :: Ord a => a -> Tree a -> Bool 
+\end{lstlisting}
+for search trees. Why is this new definition more efficient that the original version? 
+\end{exercise}
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+occurs x (Leaf y)     = x == y
+occurs x (Node l y r) = case compare x y of
+                              LT ->  occurs x l
+                              EQ -> True
+                              GT ->  occurs x r
+ \end{lstlisting}
+                           
+This version is more efficient because it only requires one comparison between x and y for each node, whereas the previous version may require two.
+\pagebreak
+\end{solution}
+\begin{exercise}
+Consider the following type of binary trees: \\
+\begin{lstlisting}[language=Haskell]
+data Tree a = Leaf a | Node (Tree a) (Tree a) 
+\end{lstlisting}
+Let us say that such a tree is \textit{balanced} if the number of leaves in the left and right subtree differs by at most one, with the leaves themselves being trivially balanced. 
+\begin{enumerate}
+\item Define a function \textbf{\textit{leaves}} that returns the number of leaves in a tree.
+\begin{lstlisting}[language=Haskell]
+leaves:: Tree a -> Int
+\end{lstlisting}
+\item Using \textbf{\textit{leaves}} above, or otherwise, define a function \textbf{\textit{balanced}} that decides if a tree is balanced or not. 
+\begin{lstlisting}[language=Haskell]
+balanced:: Tree a -> Bool
+\end{lstlisting}
+\item 
+Define a function  \textbf{\textit{depth}} that calculates the depth of a tree, where the depth is given by the number of nodes in the longest path from the root of the tree to a leaf in the tree. 
+\begin{lstlisting}[language=Haskell]
+depth :: Tree a -> Int
+\end{lstlisting}
+
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+
+leaves (Leaf _)   = 1
+leaves (Node l r) = leaves l + leaves r
+
+balanced (Leaf _)   = True
+balanced (Node l r) = abs (leaves l - leaves r) <= 1
+                         && balanced l && balanced r
+                         
+depth (Leaf _) = 0
+depth ( Node l r ) = max (1 + depth l) 1 + depth r
+\end{lstlisting}
+\end{solution}
+
+\begin{exercise}
+Define a function 
+\begin{lstlisting}[language=Haskell]
+balance :: [a] -> Tree a
+\end{lstlisting}
+that converts a non-empty list into a balanced tree. \\
+\textbf{\textit{Hint:}} first define a function that splits a list into two halves whose length differs by at most one. 
+
+\end{exercise}
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+data Tree a = Leaf a | Node (Tree a) (Tree a)
+              deriving (Show, Read)   -- so we can see it working
+
+halve :: [a] -> ([a], [a])
+halve xs = splitAt (length xs `div` 2) xs 
+
+balance ::  [a] -> Tree a
+balance [x] = Leaf x
+balance xs = Node ( balance ys ) ( balance zs)
+             where (ys,zs) = halve xs
+\end{lstlisting}
+\pagebreak
+\end{solution}
+\begin{exercise}
+Using the idea of the search tree used in class with a slight change, 
+\begin{lstlisting}[language = Haskell]
+data Tree a = 
+              EmptyTree 
+            | Node (Tree a) a (Tree a)  deriving (Show, Read, Eq)  
+
+occurs x (Node l y r) | x == y = True
+                      | x < y  = occurs x l
+                      | x > y    = occurs x r
+
+treeInsert :: (Ord a) => a -> Tree a -> Tree a  
+--Write the code for this
+
+flatten :: Tree a ->  [a]
+-- Write the code for this
+\end{lstlisting}
+\end{exercise}
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+data Tree a = 
+              EmptyTree 
+            | Node (Tree a) a (Tree a)  deriving (Show, Read, Eq)  
+
+occurs x (Node l y r) | x == y = True
+                      | x < y  = occurs x l
+                      | x > y    = occurs x r
+
+treeInsert :: (Ord a) => a -> Tree a -> Tree a  
+treeInsert x EmptyTree = Node  EmptyTree x EmptyTree  
+  
+treeInsert x (Node left a right)   
+ --   | x == a = trace ( "Equals" ) Node left x  right  
+    | x <= a  = trace ( "x < a" ) Node  (treeInsert x left) a right  
+    | x > a  = trace ( "x > a" )Node  left  a (treeInsert x right)  
+
+flatten :: Tree a ->  [a]
+flatten EmptyTree    = []
+flatten (Node EmptyTree x EmptyTree)     = [x]
+flatten (Node l x r) = flatten l
+                       ++ [x]
+                       ++ flatten r
+\end{lstlisting}
+\end{solution}
+\pagebreak
+\begin{exercise}
+Define appropriate versions of the library functions: 
+\begin{enumerate}
+\item
+\begin{lstlisting}[language=Haskell]
+repeat :: a -> [a]
+repeat x = xs where xs = x:xs
+\end{lstlisting}
+
+\item
+\begin{lstlisting}[language=Haskell]
+take :: Int -> [a] -> [a]
+take   0  _        	= []
+take   _  []   	= []
+take n (x:xs) 	= x : take (n - 1) xs
+\end{lstlisting}
+
+\item
+\begin{lstlisting}[language=Haskell]
+replicate :: Int -> a -> [a]
+replicate  n = take n . repeat 
+\end{lstlisting}
+
+\item
+\begin{lstlisting}[language=Haskell]
+map : (a-> b) -> [a] -> [b]
+map _ [] = []
+map f (x:xs) = f x : map xs
+\end{lstlisting}
+
+\end{enumerate}
+for the following type of binary trees: 
+\begin{lstlisting}[language=Haskell]
+data Tree a = Leaf | Node a (Tree a )  (Tree a) 
+                      deriving Show
+\end{lstlisting}
+                      
+You should test it on the following test Tree (or similar) 
+\begin{lstlisting}[language=Haskell]
+myTree :: Tree Int
+myTree = Node  1 (Node 6 (Node 4 (Leaf)  (Leaf))  (Leaf) )  (Node 3 Leaf  Leaf )
+\end{lstlisting}
+
+\end{exercise}
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+data Tree a = Leaf  |  Node  a (Tree a) (Tree a) 
+               deriving Show
+
+repeatTree :: a -> Tree a
+repeatTree x =  Node x t t 
+                where t = repeatTree x 
+takeTree :: Int -> Tree a -> Tree a
+takeTree 0 _ = Leaf
+takeTree n Leaf = Leaf
+takeTree n (Node x l r)  = Node  x (takeTree (n-1) l ) (takeTree (n-1) r )
+
+mapTree :: (a->b) -> Tree a -> Tree b
+mapTree f Leaf = Leaf
+mapTree f (Node x l r) = Node (f x) (mapTree f l) (mapTree f r)
+
+replicateTree :: Int -> a -> Tree a
+replicateTree n = takeTree n . repeatTree
+
+\end{lstlisting}
+\end{solution}
+ %%%Uncomment this for the Answers
+
+\end{document}

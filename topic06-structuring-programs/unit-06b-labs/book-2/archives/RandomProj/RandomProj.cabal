@@ -1,0 +1,64 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 3447c361e4f706b159e5a9c9c8e9f9238dc3b4beea9f27d2bdeeafecb297a92a
+
+name:           RandomProj
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/RandomProj#readme>
+homepage:       https://github.com/githubuser/RandomProj#readme
+bug-reports:    https://github.com/githubuser/RandomProj/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/RandomProj
+
+library
+  exposed-modules:
+      Lib
+      Split.LibSplit
+  other-modules:
+      Paths_RandomProj
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , random
+  default-language: Haskell2010
+
+executable RandomProj-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_RandomProj
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      RandomProj
+    , base >=4.7 && <5
+  default-language: Haskell2010
+
+test-suite RandomProj-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_RandomProj
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      RandomProj
+    , base >=4.7 && <5
+  default-language: Haskell2010

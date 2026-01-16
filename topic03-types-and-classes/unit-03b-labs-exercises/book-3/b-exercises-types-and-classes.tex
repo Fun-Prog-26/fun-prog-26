@@ -1,0 +1,177 @@
+\documentclass{article}
+
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[printsolution=true]{exercises}
+
+
+
+% Define colors for Haskell syntax
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% Configure listings for Haskell
+\lstset{frame=tb,
+  language=Haskell,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% Title and Footer Information
+\newcommand\ExTitle{Types and Classes}
+\newcommand\fullExTitle{Exercises and Solutions\\ \ExTitle }
+\newcommand\footerExTitle{\ExTitle -\ Exercises and Solutions}
+
+\pagestyle{fancy}
+\fancyhead{} % Clear header
+\renewcommand{\headrulewidth}{0pt} % No header line
+\fancyfoot{} % Clear footer
+\fancyfoot[LE,RO]{\thepage} % Page number
+\fancyfoot[RE,LO]{\footerExTitle} % Footer text
+
+\begin{document}
+
+\begin{Huge}
+	\begin{center}
+	\fullExTitle
+	\end{center}
+\end{Huge}
+
+% === exercise 1 ===
+\begin{exercise}
+  What are the types of the following values?  
+\end{exercise}
+
+\begin{lstlisting}
+    ['a', 'b', 'c']
+    ('a', 'b', 'c')
+    [(False, '0'), (True, '1')]
+    (['1', '0'], ['0', '1'])
+    [tail, init, reverse]	
+\end{lstlisting}
+
+Use GHCi (:t) to check your solutions.
+
+\begin{solution}
+\begin{lstlisting}
+    ['a', 'b', 'c']  :: [Char]
+    ('a', 'b', 'c')  :: (Char, Char, Char)
+    [(False, '0'), (True, '1')]  :: [(Bool, Char)]
+    (['1', '0'], ['0', '1'])   :: ([String], [String])
+    [tail, init, reverse]	:: [[a] -> [a]]
+\end{lstlisting}
+\end{solution}
+
+% === exercise 2 ===
+\begin{exercise}
+   Write down definitions that have the following types:
+\end{exercise}
+
+\begin{lstlisting}
+    bools :: [Bool]
+    nums :: [[Int]]
+    add :: Int -> Int -> Int -> Int
+    copy :: a -> (a, a)
+    apply :: (a -> b) -> a -> b	
+\end{lstlisting}
+
+Check your solutions using GHCi.
+
+\begin{solution}
+\begin{lstlisting}
+  bools :: [Bool]
+  bools = [True, False]
+
+  nums :: [[Int]]
+  nums = [[1,2,3], [2,3,4]]
+
+  add :: Int -> Int -> Int -> Int
+  add x y z = x + y + z
+
+  copy :: a -> (a, a)
+  copy x = (x, x)
+
+  apply :: (a -> b) -> a -> b
+  apply f x = f x
+\end{lstlisting}
+\end{solution}
+
+% === exercise 3 ===
+\begin{exercise}
+  What are the types of the following functions?
+\end{exercise}
+
+\begin{lstlisting}
+    copy x = (x, x)
+    second xs = head (tail xs)
+    swap (x,y) = (y,x)
+    pair x y = (x,y)
+    double x = x * 2
+    palindrome xs = reverse xs == xs
+    twice f x = f (f x)
+\end{lstlisting}
+
+Use GHCi (`:t`) to check their types.
+
+\begin{solution}
+\begin{lstlisting}
+  copy :: a -> (a, a)
+  copy x = (x, x)
+
+  second :: [a] -> a
+  second xs = head (tail xs)
+
+  swap :: (a, b) -> (b, a)
+  swap (x, y) = (y, x)
+
+  pair :: a -> b -> (a, b)
+  pair x y = (x, y)
+
+  double :: Num a => a -> a
+  double x = x * 2
+
+  palindrome :: Eq a => [a] -> Bool
+  palindrome xs = reverse xs == xs
+
+  twice :: (a -> a) -> a -> a
+  twice f x = f (f x)
+\end{lstlisting}
+\end{solution}
+\pagebreak
+% === exercise 4 ===
+\begin{exercise}
+  When writing the following functions, what type class should be used in the class constraint?
+\end{exercise}
+
+\begin{lstlisting}
+ (i) multiply :: ___ => a -> a -> a
+ (ii) areEqual :: ___ => a -> a -> Bool
+ (iii) sort :: ___ => [a] -> [a]
+ (iv) maxList :: ___ => [a] -> a
+\end{lstlisting}
+
+\begin{solution}
+\begin{lstlisting}
+ (i) multiply :: Num a => a -> a -> a
+ (ii) areEqual :: Eq a => a -> a -> Bool
+ (iii) sort :: Ord a => [a] -> [a]
+ (iv) maxList :: Ord a => [a] -> a
+\end{lstlisting}
+\end{solution}
+
+\end{document}

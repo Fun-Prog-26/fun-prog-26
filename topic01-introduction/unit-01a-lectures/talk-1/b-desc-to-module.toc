@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Module Name}{3}{section.1}%
+\contentsline {section}{\numberline {2}Lecturer}{3}{section.2}%
+\contentsline {section}{\numberline {3}How to reach me}{3}{section.3}%
+\contentsline {section}{\numberline {4}Learning Approaches}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Learning Technologies}{4}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Structure of lectures/ labs}{5}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Module objectives /\ Learning outcomes}{6}{section.5}%
+\contentsline {section}{\numberline {6}Assessment Breakdown}{7}{section.6}%
+\contentsline {section}{\numberline {7}Academic Integrity}{9}{section.7}%
+\contentsline {section}{\numberline {8}Important note about engagement in the module and time management}{11}{section.8}%
+\contentsline {section}{\numberline {9}Netiquette and Decorum}{12}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Netiquette}{12}{subsection.9.1}%

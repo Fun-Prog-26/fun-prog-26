@@ -1,0 +1,24 @@
+[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1N0b2NrUXVvdGVzXSAtLT58Q29kZSBTdHJ1Y3R1cmV8IEMgXG4gICAgQyhbc3ViZGlyZWN0b3JpZXNdKVxuICAgIEMgLS0-fC9hcHB8IERbQnJpbmdzIGl0IGFsbCB0b2dldGhlcl1cbiAgICBEIC0tPiBEMVtNYWluLmhzXVxuICAgIEMgLS0-fC9zcmN8IEVbJ2hlYXZ5IGxpZnRpbmcnIGZ1bmN0aW9ucyBoZXJlXVxuICAgIEMgLS0-fC90ZXN0fCBGW3Rlc3RzIG5vdCB1c2VkIGluIHRoaXMgZXhhbXBsZV1cbiAgICBDIC0tPiBHW3F1b3Rlcy5jc3YgLSBpbnB1dCBmaWxlIGZvciBhbmFseXNpc11cbiAgICBDIC0tPiBIW3BhY2thZ2UueWFtbCAtIGZpbGUgd2l0aCBkZXBlbmRlbmNpZXNdXG4gICAgRSAtLT4gRTFbQ2xlYW5EYXRhLmhzXVxuICAgIEUgLS0-IEUyW1F1b3RlRGF0YS5oc11cbiAgICBFIC0tPiBFM1tTdGF0UmVwb3J0LmhzXVxuICAgIEUxIC0tPiBFMTFbZmlyc3QgY2xlYW5pbmcgb2YgZGF0YV1cbiAgICBFMiAtLT4gRTIxW0ludHJvZHVjZXMgUXVvdGVEYXRhIGRhdGEgdHlwZV1cbiAgICBFMyAtLT4gRTMxW0FuYWx5c2VzIHRoZSBkYXRhXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW1N0b2NrUXVvdGVzXSAtLT58Q29kZSBTdHJ1Y3R1cmV8IEMgXG4gICAgQyhbc3ViZGlyZWN0b3JpZXNdKVxuICAgIEMgLS0-fC9hcHB8IERbQnJpbmdzIGl0IGFsbCB0b2dldGhlcl1cbiAgICBEIC0tPiBEMVtNYWluLmhzXVxuICAgIEMgLS0-fC9zcmN8IEVbJ2hlYXZ5IGxpZnRpbmcnIGZ1bmN0aW9ucyBoZXJlXVxuICAgIEMgLS0-fC90ZXN0fCBGW3Rlc3RzIG5vdCB1c2VkIGluIHRoaXMgZXhhbXBsZV1cbiAgICBDIC0tPiBHW3F1b3Rlcy5jc3YgLSBpbnB1dCBmaWxlIGZvciBhbmFseXNpc11cbiAgICBDIC0tPiBIW3BhY2thZ2UueWFtbCAtIGZpbGUgd2l0aCBkZXBlbmRlbmNpZXNdXG4gICAgRSAtLT4gRTFbQ2xlYW5EYXRhLmhzXVxuICAgIEUgLS0-IEUyW1F1b3RlRGF0YS5oc11cbiAgICBFIC0tPiBFM1tTdGF0UmVwb3J0LmhzXVxuICAgIEUxIC0tPiBFMTFbZmlyc3QgY2xlYW5pbmcgb2YgZGF0YV1cbiAgICBFMiAtLT4gRTIxW0ludHJvZHVjZXMgUXVvdGVEYXRhIGRhdGEgdHlwZV1cbiAgICBFMyAtLT4gRTMxW0FuYWx5c2VzIHRoZSBkYXRhXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
+
+
+
+graph TD
+    A[StockQuotes] -->|Code Structure| C 
+    C([subdirectories])
+    C -->|/app| D[Brings it all together]
+    D --> D1[Main.hs]
+    C -->|/src| E['heavy lifting' functions here]
+    C -->|/test| F[tests not used in this example]
+    C --> G[quotes.csv - input file for analysis]
+    C --> H[package.yaml - file with dependencies]
+    E --> E1[CleanData.hs]
+    E --> E2[QuoteData.hs]
+    E --> E3[StatReport.hs]
+    E1 --> E11[first cleaning of data]
+    E2 --> E21[Introduces QuoteData data type]
+    E3 --> E31[Analyses the data]
+
+
+
+
+

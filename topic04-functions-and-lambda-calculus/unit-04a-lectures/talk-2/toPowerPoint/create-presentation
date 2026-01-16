@@ -1,0 +1,195 @@
+from pptx import Presentation
+from pptx.util import Inches, Pt
+from pptx.enum.text import PP_PARAGRAPH_ALIGNMENT
+
+# Create a new presentation
+prs = Presentation()
+
+# --- Slide 1: Programming in Haskell ---
+slide1 = prs.slides.add_slide(prs.slide_layouts[5])  # using a blank layout
+title_shape = slide1.shapes.title
+if title_shape:
+    title_shape.text = "PROGRAMMING IN HASKELL"
+else:
+    # If the layout doesn't have a title placeholder, add one manually.
+    title_box = slide1.shapes.add_textbox(Inches(1), Inches(0.5), Inches(8), Inches(1))
+    title_box.text_frame.text = "PROGRAMMING IN HASKELL"
+
+# Add image (make sure the file path is correct)
+img_path = "img/b-lambda-calculus.png"
+left = Inches(0.5)
+top = Inches(1.5)
+height = Inches(3)  # adjust as needed
+try:
+    slide1.shapes.add_picture(img_path, left, top, height=height)
+except Exception as e:
+    print(f"Could not load image {img_path}: {e}")
+
+# Add caption below image
+caption_box = slide1.shapes.add_textbox(Inches(0.5), Inches(5), Inches(8), Inches(0.5))
+caption_frame = caption_box.text_frame
+caption_frame.text = "Chapter 4.2 The Lambda Calculus"
+for paragraph in caption_frame.paragraphs:
+    paragraph.font.size = Pt(16)
+    paragraph.alignment = PP_PARAGRAPH_ALIGNMENT.CENTER
+
+# --- Slide 2: Lambda Calculus ---
+slide2 = prs.slides.add_slide(prs.slide_layouts[5])
+# Title
+title_box = slide2.shapes.add_textbox(Inches(0.5), Inches(0.3), Inches(9), Inches(0.7))
+tf = title_box.text_frame
+p = tf.add_paragraph()
+p.text = "Lambda Calculus"
+p.font.size = Pt(32)
+p.font.bold = True
+
+# Add bullet points
+content_box = slide2.shapes.add_textbox(Inches(0.5), Inches(1.5), Inches(9), Inches(3))
+tf = content_box.text_frame
+bullets = [
+    "lambda calculus is a model of computation devised in the 1930s by Alonzo Church.",
+    "Functional programming languages are all based on the lambda calculus.",
+    "Haskell is a *pure* functional language because all its features are translatable into lambda expressions.",
+    "Allows a higher degree of abstraction and composability."
+]
+for bullet in bullets:
+    p = tf.add_paragraph()
+    p.text = bullet
+    p.level = 0
+    p.font.size = Pt(20)
+
+# --- Slide 3: The structure of lambda terms ---
+slide3 = prs.slides.add_slide(prs.slide_layouts[5])
+# Title
+title_box = slide3.shapes.add_textbox(Inches(0.5), Inches(0.3), Inches(9), Inches(0.7))
+tf = title_box.text_frame
+p = tf.add_paragraph()
+p.text = "The structure of lambda terms"
+p.font.size = Pt(32)
+p.font.bold = True
+
+# Add image
+img_path = "img/01.png"
+left = Inches(1)
+top = Inches(1.5)
+try:
+    slide3.shapes.add_picture(img_path, left, top, width=Inches(5))
+except Exception as e:
+    print(f"Could not load image {img_path}: {e}")
+
+# Optionally add caption
+caption_box = slide3.shapes.add_textbox(Inches(1), Inches(4.8), Inches(8), Inches(0.5))
+caption_frame = caption_box.text_frame
+caption_frame.text = "Structure of lambda terms"
+
+# --- Slide 4: Alpha Equivalence ---
+slide4 = prs.slides.add_slide(prs.slide_layouts[5])
+title_box = slide4.shapes.add_textbox(Inches(0.5), Inches(0.3), Inches(9), Inches(0.7))
+tf = title_box.text_frame
+p = tf.add_paragraph()
+p.text = "Alpha Equivalence"
+p.font.size = Pt(32)
+p.font.bold = True
+
+content = (
+    "We have seen the function:\n\n"
+    "    λ x. x\n\n"
+    "The variable x here is not semantically meaningful except in its role in that single expression. "
+    "Because of this, there’s a form of equivalence between lambda terms called alpha equivalence. In other words:\n\n"
+    "    λ x. x\n    λ apple. apple\n    λ orange. orange\n\n"
+    "all mean the same thing."
+)
+
+text_box = slide4.shapes.add_textbox(Inches(0.5), Inches(1.5), Inches(9), Inches(3))
+text_frame = text_box.text_frame
+text_frame.text = content
+for paragraph in text_frame.paragraphs:
+    paragraph.font.size = Pt(32)
+
+# --- Slide 5: Beta Reduction ---
+slide5 = prs.slides.add_slide(prs.slide_layouts[5])
+title_box = slide5.shapes.add_textbox(Inches(0.5), Inches(0.3), Inches(9), Inches(0.7))
+tf = title_box.text_frame
+p = tf.add_paragraph()
+p.text = "Beta Reduction"
+p.font.size = Pt(32)
+p.font.bold = True
+
+content_box = slide5.shapes.add_textbox(Inches(0.5), Inches(1.5), Inches(9), Inches(3))
+tf = content_box.text_frame
+bullets = [
+    "When we apply a function to an argument, we substitute the input expression for all instances of bound variables within the body of the abstraction.",
+    "Then we eliminate the head of the abstraction (its only purpose was to bind a variable).",
+    "This process is called beta reduction."
+]
+for bullet in bullets:
+    p = tf.add_paragraph()
+    p.text = bullet
+    p.level = 0
+    p.font.size = Pt(32)
+
+# SLide 6: Example of Beta Reduction
+slide6 = prs.slides.add_slide(prs.slide_layouts[5])
+title_box = slide6.shapes.add_textbox(Inches(0.5), Inches(0.3), Inches(9), Inches(0.7))
+tf = title_box.text_frame
+p = tf.add_paragraph()
+p.text = "Example of Beta Reduction"
+p.font.size = Pt(32)
+p.font.bold = True
+
+content_box = slide6.shapes.add_textbox(Inches(0.5), Inches(1.5), Inches(9), Inches(3))
+content = ( 
+"We apply the function above to 2"
+ 
+
+     "    λ x. x\n\n""substitute 2 for each bound variable in the body of the function, and then eliminate the head: \n"
+        "  (λ x. x)  2\n\n"
+     " The only bound variable is the single x, so applying this function to 2 returns 2. \n"
+     " This function is the *identity* function. \n"
+
+)
+text_box = slide6.shapes.add_textbox(Inches(0.5), Inches(1.5), Inches(9), Inches(3))
+text_frame = text_box.text_frame
+text_frame.text = content
+for paragraph in text_frame.paragraphs:
+    paragraph.font.size = Pt(32)
+# --- Additional slides ---
+# You would repeat the process for each remaining frame.
+# For example, create new slides for:
+# - More Beta Reduction (with examples)
+# - Variables (bound and free) and examples
+# - Multiple Arguments (and the note about syntactic sugar)
+# - Lambda Calculus in Haskell (with the table; note: creating a table with python-pptx is possible, but here we
+#   might add it as formatted text or use a pre-prepared image of the table)
+# - Encoding Lambda Calculus, Encoding Booleans, and so on.
+
+# For brevity, here’s an example slide for Encoding Booleans:
+
+slide7 = prs.slides.add_slide(prs.slide_layouts[5])
+title_box = slide6.shapes.add_textbox(Inches(0.5), Inches(0.3), Inches(9), Inches(0.7))
+tf = title_box.text_frame
+p = tf.add_paragraph()
+p.text = "Encoding Booleans in λ Calculus"
+p.font.size = Pt(32)
+p.font.bold = True
+
+content = (
+    "We can encode booleans as functions. For example:\n\n"
+    "    TRUE  = λ x. λ y. x\n"
+    "    FALSE = λ x. λ y. y\n\n"
+    "Using these, we define NOT as:\n\n"
+    "    NOT = λ b. b FALSE TRUE\n\n"
+    "Testing:\n"
+    "    NOT TRUE  => FALSE\n"
+    "    NOT FALSE => TRUE"
+)
+
+text_box = slide7.shapes.add_textbox(Inches(0.5), Inches(1.5), Inches(9), Inches(3))
+text_frame = text_box.text_frame
+text_frame.text = content
+for paragraph in text_frame.paragraphs:
+    paragraph.font.size = Pt(32)
+
+# --- Save the presentation ---
+prs.save("slide6.pptx")
+print("Presentation created successfully as 'LambdaCalculusPresentation.pptx'")

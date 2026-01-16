@@ -1,0 +1,243 @@
+\documentclass{article}
+
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[printsolution=true]{exercises}
+%% Change this for title information 
+\newcommand\ExTitle{Functors and I/O}
+
+\newcommand\fullExTitle{exercises \\ \ExTitle }
+\newcommand\footerExTitle{\ExTitle -\  exercises }
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{\footerExTitle} % other info in "inner" position of footer line
+
+%\usepackage[mathrm,colour,cntbysection]{czt}
+
+\begin{document}
+\begin{Huge}
+	\begin{center}
+	\fullExTitle
+	\end{center}
+\end{Huge}
+
+\begin{exercise}
+Give a definition of the function 
+\begin{lstlisting}[language=Haskell]
+fmap :: (a-> b) -> IO a -> IO b
+  \end{lstlisting}
+the effect of which is to transform an interaction by applying the function to its result. You should define it using the 
+\begin{lstlisting}[language=Haskell]
+do  
+\end{lstlisting}
+construct.
+\end{exercise}
+
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+fmap :: (a-> b) -> IO a -> IO b
+
+fmap f m
+  = do x <- m
+       return (f x)
+  \end{lstlisting}
+\end{solution}
+
+
+\begin{exercise} 
+Define the function 
+\begin{lstlisting}[language=Haskell]
+repeat :: IO Bool -> IO () -> IO ()
+  \end{lstlisting}
+ so that 
+ \begin{lstlisting}[language=Haskell]
+repeat test oper
+  \end{lstlisting}
+has the effect of repeating \textit{\textbf{oper}}  until the condition \textit{\textbf{test}} is \textit{\textbf{True}}.
+\end{exercise}
+
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+repeat :: IO Bool -> IO () -> IO ()
+
+repeat test m
+  = do res <- test
+       if res 
+          then return ()
+          else do m
+                  repeat test m
+ \end{lstlisting}
+ \end{solution}
+
+
+\begin{exercise}
+Define the higher-order function \textit{\textbf{whileG}} in which the condition and the operation work over values of type \textit{\textbf{a}}. Its type should be:
+\begin{lstlisting}[language=Haskell]
+whileG :: (a -> IO Bool) -> (a -> IO a) -> (a-> IO a) 
+\end{lstlisting}
+so that 
+ \begin{lstlisting}[language=Haskell]
+whileG cond  op x
+  \end{lstlisting}
+has the effect of repeating \textit{\textbf{op x}}  while the condition \textit{\textbf{cond x }} is \textit{\textbf{True}}.
+
+\end{exercise} 
+
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+whileG :: (a -> IO Bool) -> (a -> IO a) -> (a -> IO a)
+
+whileG cond op x
+  = do test <- cond x
+       if test
+          then do op x
+                  whileG cond op x
+          else return x
+ \end{lstlisting}
+ \end{solution}
+
+\begin{exercise} 
+Using the function \textit{\textbf{whileG}} or otherwise, define an interaction which reads a number, \textit{\textbf{n}}, say, and then reads a further \textit{\textbf{n}} numbers and finally returns their average.  
+\end{exercise} 
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+findAvg :: IO Integer
+
+findAvg 
+  = do n <- getInt
+       s <- sumInts n 0
+       return (s `div` n)
+
+sumInts :: Integer -> Integer -> IO Integer
+
+sumInts n s 
+  = if n>0 
+       then do m <- getInt
+               sumInts (n-1) (s+m)
+       else return s     
+\end{lstlisting}
+\end{solution}
+
+\begin{exercise}
+\begin{enumerate}
+\item
+Define a function 
+\begin{lstlisting}[language=Haskell]
+accumulate :: [IO a] -> IO [a]
+\end{lstlisting}
+which performs a sequence of actions and accumulates their result in a list. \\
+You can test this using (see testf below), e.g.:
+\begin{lstlisting}[language=Haskell]
+> accumulate [readLn, testf "hi", readLn]
+\end{lstlisting}
+\item
+Also define a function :
+\begin{lstlisting}[language=Haskell]
+sequence' :: [IO a] -> IO ()
+\end{lstlisting}
+which performs the interactions in turn, but discards their results. \\
+You can test this using (see testf below), e.g.:
+\begin{lstlisting}[language=Haskell]
+> sequence' [putStrLn "hello" , putStrLn "goodbye"]
+\end{lstlisting}
+\item
+Finally show how you would sequence a series, passing in values from one to the next :
+\begin{lstlisting}[language=Haskell]
+seqList :: [a-> IO a]  -> a -> IO a 
+\end{lstlisting}
+\textit{\textbf{Hint: }} Use a simple function e.g 
+\begin{lstlisting}[language=Haskell]
+testf :: String -> IO String
+testf x =  do
+           putStrLn x
+           return (x ++ x)
+\end{lstlisting}
+(which takes a parameter and appends it to itself. It works on Strings). \\So, you could call it as 
+\begin{lstlisting}[language=Haskell]
+> seqList [testf, testf, testf] "hello"   -- and get back 
+hello                           --from first call  (as IO effect)
+hellohello                      --from second call
+hellohellohellohello            --from third call
+"hellohellohellohellohellohellohellohello"    -- returned from function
+\end{lstlisting}
+\end{enumerate}
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+accumulate :: [IO a] -> IO [a]
+accumulate [] = return []
+accumulate (a:as) = do 
+                       x<- a                       
+                       xs <- accumulate as
+                       return (x:xs)
+                       
+--test this using 
+> accumulate [readLn, testf "hi", readLn]
+           
+sequence' :: [IO a] -> IO ()
+sequence' [] = return ()
+sequence' (a:as) = do 
+                    a
+                    sequence' as
+                    return()
+                    
+ --test this with
+ > sequence' [putStrLn "hello" , putStrLn "goodbye"]
+                    
+seqList ::  [a-> IO a]  -> a -> IO a 
+seqList [] elem = return elem
+
+seqList (a:as) elem = do
+                       x <- a elem
+                       seqList as x
+
+
+\end{lstlisting}
+\end{solution}
+
+\begin{exercise}
+Given the type definition
+\begin{lstlisting}[language=Haskell]
+  	data Result a = Succeed a | Fail	
+\end{lstlisting}
+show how \textit{\textbf{Result}}  can be made into a monadic type.
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+  data Result a = Succeed a | Fail deriving (Eq, Show)
+
+instance Functor Result where
+  fmap f (Succeed x) = Succeed (f x)
+  fmap _ _          = Fail
+
+instance Applicative Result where 
+  pure = Succeed
+  Fail <*> _ = Fail
+  (Succeed f) <*> something = fmap f something
+
+instance Monad Result where
+  return = Succeed
+  Succeed x >>= f = f x
+  Fail >>= _ = Fail
+  
+-- to test this 
+divBy :: Int -> Int -> Result Int
+divBy 0 _ = Fail
+divBy x y = Succeed ( y `div`x)
+\end{lstlisting}
+\end{solution}
+
+
+\end{document}

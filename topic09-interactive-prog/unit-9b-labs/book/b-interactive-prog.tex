@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage[printsolution=true]{exercises} % put in false to hide solutions, true to print
+% for exercise 
+%% Change this for title information 
+\newcommand\ExTitle{Topic 9 - Interactive Programming}
+
+\newcommand\fullExTitle{Exercises \\ \ExTitle }
+\newcommand\footerExTitle{\ExTitle -\  Exercises }
+
+\pagestyle{fancy}
+\fancyhead{} % clear all header fields
+\renewcommand{\headrulewidth}{0pt} % no line in header area
+\fancyfoot{} % clear all footer fields
+\fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
+\fancyfoot[RE,LO]{\footerExTitle} % other info in "inner" position of footer line
+
+
+
+\begin{document}
+\begin{Huge}
+	\begin{center}
+	\fullExTitle
+	\end{center}
+\end{Huge}
+\begin{exercise}
+Write an I/O program which will read a line of input and test whether the input is a palindrome. The program should 'prompt' the user for its input and also output an appropriate message.
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+interactivePalCheck :: IO ()
+
+interactivePalCheck
+  = do putStr "Input a string for palindrome check: "
+       st <- getLine
+       if st == reverse st 
+          then putStr "Palindrome.\n"
+          else putStr "Not a palindrome.\n"
+\end{lstlisting}
+          
+\end{solution}
+
+\begin{exercise}
+Write an I/O program which will read two integers, each on a separate line and output their sum. The program should prompt for input and explain its output.
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+interactiveIntSum :: IO ()
+
+interactiveIntSum
+  = do putStr "Input an integer (followed by Return): "
+       st1 <- getLine
+       let int1 = (read st1) :: Int
+       putStr "Input another integer (followed by Return): "
+       st2 <- getLine
+       let int2 = read st2 :: Int
+       putStrLn ("The sum of these integers is "++ show (int1+int2))
+\end{lstlisting}
+\end{solution}
+
+\pagebreak
+\begin{exercise}
+Define a  function \\
+\begin{lstlisting}[language=Haskell]
+putNtimes :: Integer -> String -> IO ()
+\end{lstlisting}
+so that the effect of
+\begin{lstlisting}[language=Haskell]
+ putNtimes n str
+\end{lstlisting}
+ is to output a string \textit{str}, $n$ times, one per line. \\
+ \textbf{\textit{Hint: }} You can use recursion in the definition. 
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+
+putNtimes :: Integer -> String -> IO ()
+
+putNtimes n st
+  = if n<=0 
+       then return ()
+       else do putStrLn st
+               putNtimes (n-1) st                                                   
+
+\end{lstlisting}
+\textbf{Alternatively }
+\begin{lstlisting}
+putNTimes :: Integer -> String -> IO ()
+putNTimes 0 str  = return ()
+putNTimes n str  = do putStr str
+                      putNTimes (n-1) str
+\end{lstlisting}
+\end{solution}
+
+
+\begin{exercise}
+Write an I/O program which will first read a positive integer, $n$, and then read n integers and write their sum.  The program should prompt for input and explain its output.\\
+\textbf{\textit{Hint: }} use auxillary functions, e.g.
+\begin{lstlisting}[language=Haskell]
+ getInteger :: String -> IO Integer 
+ sumNInts ::     --- .... which sums n ints
+\end{lstlisting}
+
+\end{exercise}
+
+\begin{solution}
+\begin{lstlisting}[language=Haskell]
+-- Instead of solving this as a single function, worth thinking about how you can 
+-- decompose the problem: write a function to get an integer, and another
+-- to do the summing.
+
+-- Useful auxiliary function, taking the prompt as parameter.
+
+getInteger :: String -> IO Integer
+
+getInteger prompt
+  = do putStr prompt
+       st <- getLine
+       return (read st :: Integer)
+
+-- Sum N integers: prompt, number to sum and and "sum so far" are the parameters
+
+sumNints :: String -> Integer -> Integer -> IO Integer
+
+sumNints prompt n s
+  = if n<=0 
+       then return s
+       else do m <- getInteger prompt
+               sumNints prompt (n-1) (s+m)
+
+
+--- The function itself
+
+getNints :: IO ()
+
+getNints
+  = do bound <- getInteger "Input the number of integers to add: "
+       sum <- sumNints "Input an integer: " bound 0
+       putStrLn ("The sum of these integers is "++ show sum)
+\end{lstlisting}
+\end{solution}
+
+\end{document}
