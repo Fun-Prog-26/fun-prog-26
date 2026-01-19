@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.13)  19 JAN 2026 18:22
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.2.13)  19 JAN 2026 16:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -471,164 +471,327 @@ File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@expandcount=\count309
  (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/local/texlive/2024/texmf-dist/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2023/10/27 v2.16 Sectioning titles
-\ttl@box=\box69
-\beforetitleunit=\skip103
-\aftertitleunit=\skip104
-\ttl@plus=\dimen270
-\ttl@minus=\dimen271
-\ttl@toksa=\toks35
-\titlewidth=\dimen272
-\titlewidthlast=\dimen273
-\titlewidthfirst=\dimen274
-) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+))) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfarrowinset=\dimen275
-\pgfarrowlength=\dimen276
-\pgfarrowwidth=\dimen277
-\pgfarrowlinewidth=\dimen278
+\pgfarrowinset=\dimen270
+\pgfarrowlength=\dimen271
+\pgfarrowwidth=\dimen272
+\pgfarrowlinewidth=\dimen273
 ) (/usr/local/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
 
 Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 45.
+(fancyhdr)                Please consider using the `twoside' option on input line 34.
 
 
 Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
-(fancyhdr)                Please consider using the `twoside' option on input line 46.
+(fancyhdr)                Please consider using the `twoside' option on input line 35.
 
 (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
 File: l3backend-xetex.def 2024-02-20 L3 backend support: XeTeX
 \g__graphics_track_int=\count310
-\l__pdf_internal_box=\box70
+\l__pdf_internal_box=\box69
 \g__pdf_backend_object_int=\count311
 \g__pdf_backend_annotation_int=\count312
 \g__pdf_backend_link_int=\count313
-) (./b-desc-to-module.aux)
+)
+No file b-desc-to-module.aux.
 \openout1 = `b-desc-to-module.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 50.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 39.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 39.
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
-LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 \c@lstlisting=\count314
-Package hyperref Info: Link coloring OFF on input line 50.
- (./b-desc-to-module.out) (./b-desc-to-module.out)
+Package hyperref Info: Link coloring OFF on input line 39.
 \@outlinefile=\write4
 \openout4 = `b-desc-to-module.out'.
 
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 59.
+(Font)              <7> on input line 48.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 59.
+(Font)              <5> on input line 48.
 File: img/RGB.png Graphic file (type bmp)
 <img/RGB.png>
 File: img/mairead-avatar.jpeg Graphic file (type bmp)
 <img/mairead-avatar.jpeg>
- [1
+[1
 
-] (./b-desc-to-module.toc)
+]
+No file b-desc-to-module.toc.
 \tf@toc=\write5
 \openout5 = `b-desc-to-module.toc'.
 
- [2] [3]
+[2]
+Overfull \hbox (38.1615pt too wide) in paragraph at lines 88--89
+[]\TU/lmr/m/n/14.4 You can also reach me via email: []mairead.meagher@setu.ie[]. 
+ []
+
+[3]
+
+LaTeX Warning: Reference `tutors' on page 4 undefined on input line 101.
+
 File: img/tutors.png Graphic file (type bmp)
 <img/tutors.png>
- [4] [5] [6]
-Overfull \hbox (23.43034pt too wide) in paragraph at lines 184--185
+
+Overfull \hbox (2.48149pt too wide) in paragraph at lines 119--120
+\TU/lmr/m/n/14.4 Moodle from time to time. (But mainly on Slack). 
+ []
+
+[4] [5] [6]
+Overfull \hbox (23.43034pt too wide) in paragraph at lines 153--154
 []\TU/lmr/m/n/14.4 Construct simple and more complex programs in Haskell; 
  []
 
 
-Overfull \hbox (7.34651pt too wide) in paragraph at lines 186--187
+Overfull \hbox (7.34651pt too wide) in paragraph at lines 155--156
 []\TU/lmr/m/n/14.4 Use tools to help build Haskell projects, notably GHCI
  []
 
 
-Overfull \hbox (2.73752pt too wide) in paragraph at lines 188--189
+Overfull \hbox (2.73752pt too wide) in paragraph at lines 157--158
 []\TU/lmr/m/n/14.4 Write programs to solve problems in specific domains,
  []
 
 [7]
-Overfull \hbox (4.95671pt too wide) in paragraph at lines 281--282
-[]\TU/lmr/m/n/14.4 40% programming assignment (including the writ-
- []
+/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic01-introduction/unit-01a-lectures/talk-1/b-desc-to-module.tex:239: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.239 }
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-[8]
+/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic01-introduction/unit-01a-lectures/talk-1/b-desc-to-module.tex:239: Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.239 }
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic01-introduction/unit-01a-lectures/talk-1/b-desc-to-module.tex:239: Missing } inserted.
+<inserted text> 
+                }
+l.239 }
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic01-introduction/unit-01a-lectures/talk-1/b-desc-to-module.tex:239: Missing } inserted.
+<inserted text> 
+                }
+l.239 }
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic01-introduction/unit-01a-lectures/talk-1/b-desc-to-module.tex:239: Package graphics Error: Division by 0.
+
+See the graphics package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.239 }
+       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic01-introduction/unit-01a-lectures/talk-1/b-desc-to-module.tex:241: Too many }'s.
+\@endfloatbox ...pagefalse \outer@nobreak \egroup 
+                                                  \color@endbox 
+l.241 \end{figure}
+                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic01-introduction/unit-01a-lectures/talk-1/b-desc-to-module.tex:241: Extra \endgroup.
+\color@endgroup ->\endgraf \endgroup 
+                                     
+l.241 \end{figure}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
+/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic01-introduction/unit-01a-lectures/talk-1/b-desc-to-module.tex:241: Too many }'s.
+\color@endbox ->\color@endgroup \egroup 
+                                        
+l.241 \end{figure}
+                  
+You've closed more groups than you opened.
+Such booboos are generally harmless, so keep going.
+
+
+/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic01-introduction/unit-01a-lectures/talk-1/b-desc-to-module.tex:241: LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.241 \end{figure}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic01-introduction/unit-01a-lectures/talk-1/b-desc-to-module.tex:241: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.241 \end{figure}
+                  
+Things are pretty mixed up, but I think the worst is over.
+
 File: img/sched-excel.png Graphic file (type bmp)
 <img/sched-excel.png>
- [9] [10] [11]
-Overfull \hbox (13.33691pt too wide) in paragraph at lines 380--381
-\TU/lmr/m/n/14.4 tion/s of code, including how and why you changed/im-
+
+LaTeX Warning: Reference `tab:ass-schedule' on page 8 undefined on input line 300.
+
+[8] [9] [10] [11] [12]
+Overfull \hbox (16.46234pt too wide) in paragraph at lines 381--384
+\TU/lmr/m/n/14.4 when posting your views to online discussion groups 
  []
 
-[12] [13] [14]
-Overfull \hbox (14.13753pt too wide) in paragraph at lines 432--434
-[]\TU/lmr/m/n/14.4 Be kind and professional: Online communication comes
+[13]
+Overfull \hbox (3.23514pt too wide) in paragraph at lines 388--390
+\TU/lmr/m/n/14.4 have the complete anonymity that comes with
+ []
+
+
+Overfull \hbox (0.14392pt too wide) in paragraph at lines 388--390
+\TU/lmr/m/n/14.4 to be kind and respectful in your comments—
+ []
+
+
+Overfull \hbox (1.36311pt too wide) in paragraph at lines 391--393
+[]\TU/lmr/m/n/14.4 Promote healthy discussions: To get the most
+ []
+
+
+Overfull \hbox (6.33209pt too wide) in paragraph at lines 391--393
+\TU/lmr/m/n/14.4 out of online forums, a useful netiquette guide-
+ []
+
+
+Overfull \hbox (2.97302pt too wide) in paragraph at lines 391--393
+\TU/lmr/m/n/14.4 questions, sharing experiences, providing pos-
+ []
+
+
+Overfull \hbox (5.56982pt too wide) in paragraph at lines 391--393
+\TU/lmr/m/n/14.4 itive feedback, asking follow-up questions, and
+ []
+
+
+Overfull \hbox (0.2991pt too wide) in paragraph at lines 391--393
+\TU/lmr/m/n/14.4 referring to information sources. Being a pos-
+ []
+
+[14]
+Overfull \hbox (12.28503pt too wide) in paragraph at lines 398--402
+\TU/lmr/m/n/14.4 come noisy, crowded with posts, and disjointed.
+ []
+
+
+Overfull \hbox (0.59995pt too wide) in paragraph at lines 402--404
+\TU/lmr/m/n/14.4 each of the previous discussion post responses
+ []
+
+
+Overfull \hbox (2.02711pt too wide) in paragraph at lines 402--404
+\TU/lmr/m/n/14.4 tion before crafting your reply. Building upon
  []
 
 [15]
-Overfull \hbox (9.3193pt too wide) in paragraph at lines 442--446
-[]\TU/lmr/m/n/14.4 You’re here to learn and contribute, not dictate: While
+Overfull \hbox (0.84955pt too wide) in paragraph at lines 408--411
+\TU/lmr/m/n/14.4 moment to reflect before hitting the send but-
+ []
+
+
+Overfull \hbox (12.95192pt too wide) in paragraph at lines 408--411
+\TU/lmr/m/n/14.4 all over the place. Most things are done quickly.
  []
 
 [16]
-Overfull \hbox (3.46396pt too wide) in paragraph at lines 452--455
-\TU/lmr/m/n/14.4 to reflect before hitting the send button. When you’re
+Overfull \hbox (1.28152pt too wide) in paragraph at lines 411--413
+\TU/lmr/m/n/14.4 fully and acknowledge the valid points in your
  []
 
 
-Overfull \hbox (19.62106pt too wide) in paragraph at lines 452--455
-\TU/lmr/m/n/14.4 using a computer, you’re normally clicking, and scrolling
+Overfull \hbox (4.37752pt too wide) in paragraph at lines 413--415
+[]\TU/lmr/m/n/14.4 Forgive and Forget If you’re offended by some-
  []
 
-[17]
-Overfull \hbox (9.17706pt too wide) in paragraph at lines 461--461
-|[]\TU/lmr/bx/n/20.74 Engagement in the module and
+
+Overfull \hbox (7.86394pt too wide) in paragraph at lines 413--415
+\TU/lmr/m/n/14.4 intentions. Give them the benefit of the doubt. 
  []
 
-[18]
-Overfull \hbox (6.59358pt too wide) in paragraph at lines 480--482
-\TU/lmr/m/n/14.4 I am looking forward to working with you all this semester.
- []
-
-[19] (./b-desc-to-module.aux)
+[17] (./b-desc-to-module.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-Package rerunfilecheck Info: File `b-desc-to-module.out' has not changed.
-(rerunfilecheck)             Checksum: 68382491DCAE904CB17F62E30D17F079;2828.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `b-desc-to-module.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `b-desc-to-module.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  C637DB8A2987E3BF97F03739D638906A;2004.
  ) 
 Here is how much of TeX's memory you used:
- 21822 strings out of 474773
- 410031 string characters out of 5757724
- 1930839 words of memory out of 5000000
- 43630 multiletter control sequences out of 15000+600000
+ 21511 strings out of 474773
+ 405671 string characters out of 5757724
+ 1927839 words of memory out of 5000000
+ 43331 multiletter control sequences out of 15000+600000
  558493 words of font info for 45 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 84i,11n,87p,533b,894s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,11n,87p,542b,892s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on b-desc-to-module.pdf (19 pages).
+Output written on b-desc-to-module.pdf (17 pages).
