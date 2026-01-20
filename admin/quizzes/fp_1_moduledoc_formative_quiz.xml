@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="category">
+    <category>
+      <text>$course$/ModuleDoc</text>
+    </category>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Module Structure</text></name>
+    <questiontext format="html">
+      <text><![CDATA[Which statement best describes the structure of the Functional Programming module?]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[✔ Knowing the structure of the module helps you plan your workload realistically across the semester.]]></text>
+    </generalfeedback>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>14 weeks, with 12 weeks of tuition and a mix of lectures and labs</text>
+      <feedback format="html">
+        <text><![CDATA[Correct. This structure allows concepts to be introduced gradually with plenty of hands‑on practice.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>10 weeks, lectures only</text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. The module runs longer and includes labs as a core component.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>12 weeks, labs only</text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. Lectures are an important part of the learning approach.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>14 weeks, project-based with no lectures</text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. Lectures guide the material that is practised in labs.]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+  <question type="multichoice">
+    <name><text>Use of AI Tools</text></name>
+    <questiontext format="html">
+      <text><![CDATA[Which statement correctly reflects the module policy on AI tools?]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[✔ This policy exists to help you use AI productively while still developing real understanding.]]></text>
+    </generalfeedback>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>AI tools may be used, but their use must be referenced and reflected upon</text>
+      <feedback format="html">
+        <text><![CDATA[Correct. Transparency and understanding are essential and will be assessed later.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>AI tools are not allowed under any circumstances</text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. AI tools are allowed, but only when used responsibly.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>AI tools may be used but must not be acknowledged</text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. All AI use must be explicitly referenced.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0">
+      <text>AI tools may replace understanding of the code</text>
+      <feedback format="html">
+        <text><![CDATA[Incorrect. Understanding your own code is a core requirement of the module.]]></text>
+      </feedback>
+    </answer>
+  </question>
+
+</quiz>
