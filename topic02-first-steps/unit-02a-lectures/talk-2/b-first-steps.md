@@ -1,5 +1,6 @@
 ---
-icon: gis:step
+icon: 
+type: gis:step
 color: green
 ---
 # 02: First Steps
