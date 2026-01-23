@@ -1,4 +1,10 @@
-# First Class Functions      
+---
+order: 3
+icon: 
+    type: ooui:function-argument-ltr
+    color: orange
+---
+# 04: First Class Functions      
 
-Lambda, let, where, First Class Functions. (Video 24 mins)
+Lambda, let, where, First Class Functions. 
 
