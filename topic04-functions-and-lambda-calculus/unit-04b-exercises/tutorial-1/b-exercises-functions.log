@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.13)  23 JAN 2026 15:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.13)  23 JAN 2026 15:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -175,7 +175,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
@@ -185,62 +185,61 @@ Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
-[3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
 Underfull \hbox (badness 10000) in paragraph at lines 206--207
 
  []
 
-<img/01.jpg, id=17, 212.29312pt x 39.14626pt>
+<img/01.jpg, id=10, 212.29312pt x 39.14626pt>
 File: img/01.jpg Graphic file (type jpg)
 <use img/01.jpg>
 Package pdftex.def Info: img/01.jpg  used on input line 212.
 (pdftex.def)             Requested size: 227.62204pt x 41.97507pt.
-
+[2{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./img/01.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
-[4 <./img/01.jpg>]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 259.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 259.
- [5] [6] [7]
-<img/02.jpg, id=34, 158.84344pt x 63.23625pt>
+[3] [4]
+<img/02.jpg, id=24, 158.84344pt x 63.23625pt>
 File: img/02.jpg Graphic file (type jpg)
 <use img/02.jpg>
 Package pdftex.def Info: img/02.jpg  used on input line 362.
 (pdftex.def)             Requested size: 227.62204pt x 90.62494pt.
-<img/03.jpg, id=35, 174.6525pt x 63.98906pt>
+<img/03.jpg, id=25, 174.6525pt x 63.98906pt>
 File: img/03.jpg Graphic file (type jpg)
 <use img/03.jpg>
 Package pdftex.def Info: img/03.jpg  used on input line 372.
 (pdftex.def)             Requested size: 227.62204pt x 83.40056pt.
- [8 <./img/02.jpg> <./img/03.jpg>]
-<img/04.png, id=39, 195.73125pt x 55.20625pt>
+ [5 <./img/02.jpg> <./img/03.jpg>]
+<img/04.png, id=29, 195.73125pt x 55.20625pt>
 File: img/04.png Graphic file (type png)
 <use img/04.png>
 Package pdftex.def Info: img/04.png  used on input line 396.
 (pdftex.def)             Requested size: 227.62204pt x 64.20438pt.
- [9 <./img/04.png>] (./b-exercises-functions.aux)
+ [6 <./img/04.png>] (./b-exercises-functions.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4828 strings out of 474116
- 75435 string characters out of 5743682
- 1994187 words of memory out of 5000000
- 27163 multiletter control sequences out of 15000+600000
+ 4815 strings out of 474116
+ 75308 string characters out of 5743682
+ 1948187 words of memory out of 5000000
+ 27150 multiletter control sequences out of 15000+600000
  559836 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  79i,11n,93p,437b,1688s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on b-exercises-functions.pdf (9 pages, 153131 bytes).
+Output written on b-exercises-functions.pdf (6 pages, 145774 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

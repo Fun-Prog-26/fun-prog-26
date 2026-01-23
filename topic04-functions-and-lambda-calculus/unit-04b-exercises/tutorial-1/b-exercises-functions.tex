@@ -4,7 +4,7 @@
 \usepackage{fancyhdr}
 \usepackage{listings}
 \usepackage{graphicx}
-\usepackage[printsolution]{exercises}
+\usepackage[printsolution=false]{exercises}
 \usepackage{color}
 
 
@@ -96,7 +96,7 @@ always0 :: Int
 always0  = 0
     \end{lstlisting}
   \end{solution}
-  \pagebreak
+
 \begin{exercise}
   Write a function:
   \begin{lstlisting}
@@ -200,7 +200,7 @@ pushOut' n  | n > 0     = n+1
     \end{enumerate}
    
     \end{solution}
-    \pagebreak
+
 \begin{exercise} 
 
 Using library functions, define a function \\
@@ -220,7 +220,7 @@ halve xs = (take half xs, drop half xs) where
 \end{lstlisting}
 \end{solution}
 %\item 
-
+\pagebreak
 \begin{exercise} 
 
 Define a function \textbf{\textit{third}}\\
@@ -314,7 +314,7 @@ lucky 13 = "You, sadly are quite unlucky. Do not, under any circumstances, inves
 lucky _ = "Mmmm.... Can't really say...."
 \end{lstlisting}
 \end{solution}
-\pagebreak
+
 \begin{exercise}
  Given the two (Prelude) functions \textbf{\textit{fst}} and \textbf{\textit{snd}} who return the first and second element of a 2-tuple respectively as in : 
 \begin{lstlisting}[language=Haskell]
