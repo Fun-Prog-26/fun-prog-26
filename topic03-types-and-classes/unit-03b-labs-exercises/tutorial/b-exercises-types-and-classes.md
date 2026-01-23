@@ -2,9 +2,9 @@
 order: 1
 icon:
   type: fluent-mdl2:handwriting
-  color: green
+  color: blue
 ---
-# 03: Exercises Types and Classes in Haskell
+# 03: Tutorial
 Practicing on types and declaring functions. 
 
 
