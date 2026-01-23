@@ -5,7 +5,7 @@ icon:
    color: orange
 ---
 
-# 04: Tutorial 4-1
+# 04: Tutorial-04
 Exercises on Functions
 
 

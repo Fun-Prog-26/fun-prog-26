@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.13)  21 JAN 2026 21:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.13)  23 JAN 2026 15:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic02-first-steps/unit-02b-labs/talk-1/b-exercises-first-steps
-(/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic02-first-steps/unit-02b-labs/talk-1/b-exercises-first-steps.tex
+**/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic02-first-steps/unit-02b-labs/tutorial/02
+(/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic02-first-steps/unit-02b-labs/tutorial/02.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -115,8 +115,8 @@ Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is usel
 Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
 (fancyhdr)                Please consider using the `twoside' option on input line 41.
 
-(./b-exercises-first-steps.aux)
-\openout1 = `b-exercises-first-steps.aux'.
+(./02.aux)
+\openout1 = `02.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
 LaTeX Font Info:    ... okay on input line 45.
@@ -187,7 +187,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--108
 
  []
 
-[2] (./b-exercises-first-steps.aux)
+[2] (./02.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -195,14 +195,14 @@ L3 programming layer <2024-02-20>
  ) 
 Here is how much of TeX's memory you used:
  3333 strings out of 474116
- 54880 string characters out of 5743682
+ 54634 string characters out of 5743682
  1930187 words of memory out of 5000000
  25696 multiletter control sequences out of 15000+600000
  558676 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,11n,93p,346b,266s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,11n,93p,327b,266s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on b-exercises-first-steps.pdf (2 pages, 53239 bytes).
+Output written on 02.pdf (2 pages, 53392 bytes).
 PDF statistics:
  31 PDF objects out of 1000 (max. 8388607)
  18 compressed objects within 1 object stream
