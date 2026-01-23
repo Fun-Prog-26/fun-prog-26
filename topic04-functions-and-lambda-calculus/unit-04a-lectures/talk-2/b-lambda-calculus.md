@@ -1,4 +1,5 @@
 ---
+order: 2
 icon: 
     type: hugeicons:aws-lambda
     color: orange
