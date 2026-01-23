@@ -4,7 +4,7 @@ icon:
    type: fluent-mdl2:handwriting
    color: orange
 ---
-# 04: Tutorial-05
+# 04: Tutorial-04
 Exercises on Lambda Calculus
 
 
