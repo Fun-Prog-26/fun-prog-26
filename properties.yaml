@@ -11,7 +11,7 @@ ignore         :
 - topic00-assignments
 #- topic01-introduction
 #- topic02-first-steps
-- topic03-types-and-classes
+#- topic03-types-and-classes
 - topic04-functions-and-lambda-calculus
 - topic05-list-comprehensions
 - topic06-structuring-programs
