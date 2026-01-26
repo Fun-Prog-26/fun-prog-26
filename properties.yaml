@@ -4,7 +4,7 @@ credits        : Ms. Mairead Meagher, SETU.
 moodle         : https://moodle.setu.ie/course/view.php?id=217690
 slack          : https://join.slack.com/t/functionalpro-k8d2114/shared_invite/zt-3ntbgw544-Q3NZOYkgXaDMSs3WW80yzg
 ignorepin      : 1234
-auth           : 0
+auth           : 4
 ignore         : 
 
 - topic000-assignmentswip
@@ -12,7 +12,7 @@ ignore         :
 #- topic01-introduction
 #- topic02-first-steps
 #- topic03-types-and-classes
-- topic04-functions-and-lambda-calculus
+#- topic04-functions-and-lambda-calculus
 - topic05-list-comprehensions
 - topic06-structuring-programs
 - topic07-recursive-functions
