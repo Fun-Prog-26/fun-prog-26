@@ -1,7 +1,7 @@
 ---
   icon: 
     type: ph:brackets-square-bold
-    color : orangereed
+    color : orangered
 ---
 # 05:  List Comprehensions
 Lists in Haskell, operations, construction of lists 
