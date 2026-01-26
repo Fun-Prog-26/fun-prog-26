@@ -1,3 +1,8 @@
-# 5: List Comprehensions
+---
+  icon: 
+    type: ph:brackets-square-bold
+    color : orangereed
+---
 
+# 05: List Comprehensions
 Lists in Haskell, operations and construction
