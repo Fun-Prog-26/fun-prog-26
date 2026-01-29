@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.13)  2 APR 2025 11:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.13)  29 JAN 2026 10:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/maireadmeagher/Documents/GitRepos/fun-prog-25/topic05-list-comprehensions/unit-05b-exercises/talk/d-exercises-list-comprehensions
-(/Users/maireadmeagher/Documents/GitRepos/fun-prog-25/topic05-list-comprehensions/unit-05b-exercises/talk/d-exercises-list-comprehensions.tex
+**/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic05-list-comprehensions/unit-05b-exercises/tutorial/d-exercises-list-comprehensions
+(/Users/maireadmeagher/Documents/GitRepos/fun-prog-26/topic05-list-comprehensions/unit-05b-exercises/tutorial/d-exercises-list-comprehensions.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (/usr/local/texlive/2024/texmf-dist/tex/latex/base/article.cls
@@ -152,7 +152,7 @@ Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is usel
 Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless.
 (fancyhdr)                Please consider using the `twoside' option on input line 46.
 
-No file d-exercises-list-comprehensions.aux.
+(./d-exercises-list-comprehensions.aux)
 \openout1 = `d-exercises-list-comprehensions.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
@@ -170,7 +170,7 @@ LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
 LaTeX Font Info:    ... okay on input line 49.
 \c@lstlisting=\count280
-(/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count281
 \scratchdimen=\dimen148
@@ -190,7 +190,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4]
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    Trying to load font information for U+msa on input line 215.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -199,57 +199,57 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 215.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<img/06.png, id=21, 175.40532pt x 63.98906pt>
+<img/06.png, id=15, 175.40532pt x 63.98906pt>
 File: img/06.png Graphic file (type png)
 <use img/06.png>
 Package pdftex.def Info: img/06.png  used on input line 252.
 (pdftex.def)             Requested size: 227.62204pt x 83.04417pt.
- [5 <./img/06.png>] [6]
-<img/01.png, id=34, 304.13625pt x 51.19125pt>
+ [3 <./img/06.png>]
+<img/01.png, id=25, 304.13625pt x 51.19125pt>
 File: img/01.png Graphic file (type png)
 <use img/01.png>
 Package pdftex.def Info: img/01.png  used on input line 289.
 (pdftex.def)             Requested size: 227.62204pt x 38.31366pt.
-<img/02.png, id=35, 290.08376pt x 48.18pt>
+<img/02.png, id=26, 290.08376pt x 48.18pt>
 File: img/02.png Graphic file (type png)
 <use img/02.png>
 Package pdftex.def Info: img/02.png  used on input line 309.
 (pdftex.def)             Requested size: 227.62204pt x 37.80592pt.
-<img/03.png, id=36, 222.8325pt x 29.10875pt>
+<img/03.png, id=27, 222.8325pt x 29.10875pt>
 File: img/03.png Graphic file (type png)
 <use img/03.png>
 Package pdftex.def Info: img/03.png  used on input line 329.
 (pdftex.def)             Requested size: 227.62204pt x 29.7345pt.
- [7 <./img/01.png> <./img/02.png>] [8 <./img/03.png>]
-<img/04.png, id=49, 262.9825pt x 43.16125pt>
+ [4 <./img/01.png> <./img/02.png> <./img/03.png>]
+<img/04.png, id=36, 262.9825pt x 43.16125pt>
 File: img/04.png Graphic file (type png)
 <use img/04.png>
 Package pdftex.def Info: img/04.png  used on input line 347.
 (pdftex.def)             Requested size: 227.62204pt x 37.35963pt.
-<img/05.png, id=50, 168.63pt x 41.15375pt>
+<img/05.png, id=37, 168.63pt x 41.15375pt>
 File: img/05.png Graphic file (type png)
 <use img/05.png>
 Package pdftex.def Info: img/05.png  used on input line 363.
 (pdftex.def)             Requested size: 227.62204pt x 55.552pt.
- [9 <./img/04.png> <./img/05.png>] (./d-exercises-list-comprehensions.aux)
+ [5 <./img/04.png> <./img/05.png>] (./d-exercises-list-comprehensions.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 5439 strings out of 474116
- 82637 string characters out of 5743682
- 1982187 words of memory out of 5000000
- 27751 multiletter control sequences out of 15000+600000
+ 5427 strings out of 474116
+ 82624 string characters out of 5743682
+ 1974187 words of memory out of 5000000
+ 27737 multiletter control sequences out of 15000+600000
  562151 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,12n,93p,367b,1633s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,11n,93p,371b,1633s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on d-exercises-list-comprehensions.pdf (9 pages, 162139 bytes).
+Output written on d-exercises-list-comprehensions.pdf (5 pages, 157205 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 93 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
