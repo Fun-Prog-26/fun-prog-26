@@ -1,3 +1,7 @@
-# 6: Structuring Programs
-
-Building programs using the stack tool.
+---
+icon: 
+    type: game-icons:gold-stack
+    color: chocolate
+---
+# 06: Structuring Programs
+Using the Stack tool
