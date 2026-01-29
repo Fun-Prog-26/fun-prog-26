@@ -1,6 +1,6 @@
 ---
 icon: 
-    type: fhugeicons:address-book
+    type: flat-color-icons:address-book
     color: orange
 --- 
 # 04: Address Example
