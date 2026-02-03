@@ -8,7 +8,7 @@ auth           : 4
 ignore         : 
 
 - topic000-assignmentswip
-- topic00-assignments
+#- topic00-assignments
 #- topic01-introduction
 #- topic02-first-steps
 #- topic03-types-and-classes
