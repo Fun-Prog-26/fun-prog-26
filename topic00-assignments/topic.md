@@ -1,6 +1,6 @@
 ---
-order: 1
-icon:
+ order: 1
+ icon:
     type: vscode-icons:file-type-testcafe
     color: lightseagreen
 ---
