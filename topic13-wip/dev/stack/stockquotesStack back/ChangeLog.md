@@ -1,5 +1,0 @@
-# Revision history for stockquotes
-
-
-
-
