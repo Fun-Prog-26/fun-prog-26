@@ -13,7 +13,7 @@ ignore         :
 #- topic02-first-steps
 #- topic03-types-and-classes
 #- topic04-functions-and-lambda-calculus
-- topic05-list-comprehensions
+#- topic05-list-comprehensions
 - topic06-structuring-programs
 - topic07-recursive-functions
 - topic08-higher-order-functions
@@ -23,3 +23,4 @@ ignore         :
 - topic12-monads
 - topic99-scaffolding
 - topic13-wip 
+- dev 
