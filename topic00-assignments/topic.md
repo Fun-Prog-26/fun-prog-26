@@ -1,8 +1,8 @@
 ---
- order: 1
- icon:
-    type: vscode-icons:file-type-testcafe
-    color: lightseagreen
+order: 1
+icon:
+  type: vscode-icons:file-type-testcafe
+  color: lightseagreen
 ---
 # Assessment in Functional Programming
 
