@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <question type="category">
+    <category>
+      <text>$course$/Topic4_Defining_Functions</text>
+    </category>
+  </question>
+
+  <!-- Q1 -->
+  <question type="multichoice">
+    <name><text>Functions vs Relations</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      What property distinguishes a mathematical function from a relation?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>A function maps each input to exactly one output</text>
+      <feedback><text>Correct — each element in the domain has exactly one mapping.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>A function may return multiple values for one input</text>
+      <feedback><text>This describes a relation, not a function.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>A function must modify state</text>
+      <feedback><text>Functions do not require state changes.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>A function has no return value</text>
+      <feedback><text>Functions always return a value.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q2 -->
+  <question type="multichoice">
+    <name><text>Function Type Notation</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      What does the type signature <code>f :: A -> B</code> mean?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>f takes a value of type A and returns a value of type B</text>
+      <feedback><text>Exactly — this is the core idea of a function.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>f converts type A into type B permanently</text>
+      <feedback><text>No conversion or mutation is implied.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>f takes two arguments</text>
+      <feedback><text>The arrow indicates input → output, not argument count.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>f changes values of type A into type B in memory</text>
+      <feedback><text>Pure functions do not modify memory or state.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q3 -->
+  <question type="multichoice">
+    <name><text>Side Effects</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      What is meant by saying a function has <em>no side-effects</em>?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>It does not change any state outside the function</text>
+      <feedback><text>Correct — only the return value matters.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>It does not return a value</text>
+      <feedback><text>A function without a return value still may have side-effects.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>It runs faster</text>
+      <feedback><text>Performance is unrelated to side-effects.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>It uses recursion</text>
+      <feedback><text>Recursion has nothing to do with side-effects.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q4 -->
+  <question type="multichoice">
+    <name><text>Purity in Haskell</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      Why are all Haskell functions considered <em>pure</em>?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>They have effects but no side-effects</text>
+      <feedback><text>Exactly — results depend only on inputs.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>They cannot use parameters</text>
+      <feedback><text>Haskell functions always use parameters.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>They always use recursion</text>
+      <feedback><text>Recursion is optional.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q5 -->
+  <question type="multichoice">
+    <name><text>Conditional Expressions</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      Which rule applies to all <code>if</code> expressions in Haskell?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>An else branch is mandatory</text>
+      <feedback><text>Correct — this avoids ambiguity.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>They can omit else if the condition is false</text>
+      <feedback><text>This is not allowed in Haskell.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>They may return different types</text>
+      <feedback><text>Both branches must return the same type.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>They are only allowed in main</text>
+      <feedback><text>Conditionals can appear anywhere.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q6 -->
+  <question type="multichoice">
+    <name><text>Guards Purpose</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      Why are guarded equations often preferred over nested if expressions?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>They improve readability for multiple conditions</text>
+      <feedback><text>Yes — especially with several logical cases.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>They execute faster</text>
+      <feedback><text>Guards are about clarity, not speed.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>They allow mutation</text>
+      <feedback><text>Haskell does not allow mutation.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>They avoid pattern matching</text>
+      <feedback><text>Guards and pattern matching often work together.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q7 -->
+  <question type="multichoice">
+    <name><text>otherwise Guard</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      What is the purpose of the <code>otherwise</code> guard?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>It acts as a catch-all condition</text>
+      <feedback><text>Correct — it is defined as True.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>It handles errors</text>
+      <feedback><text>Error handling is separate.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>It stops evaluation</text>
+      <feedback><text>Guards are matched top-down.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>It enforces purity</text>
+      <feedback><text>Purity is enforced by the language itself.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q8 -->
+  <question type="multichoice">
+    <name><text>Case Expressions</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      When is a <code>case</code> expression most appropriate?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>When choosing between a small number of possible values</text>
+      <feedback><text>Correct — this matches the slide guidance.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>For all recursive functions</text>
+      <feedback><text>Recursion does not require case.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Only with numbers</text>
+      <feedback><text>Case works with many data types.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Only in IO functions</text>
+      <feedback><text>Case expressions are pure.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q9 -->
+  <question type="multichoice">
+    <name><text>Pattern Matching Basics</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      What does pattern matching allow a function to do?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Define behaviour based on the structure of input values</text>
+      <feedback><text>Exactly — structure matters.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Change variable values</text>
+      <feedback><text>Values are immutable.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Skip type checking</text>
+      <feedback><text>Haskell is strongly typed.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Force evaluation</text>
+      <feedback><text>Pattern matching does not force evaluation.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q10 -->
+  <question type="multichoice">
+    <name><text>Wildcard Pattern</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      What does the wildcard pattern <code>_</code> represent?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Any value that we do not care about</text>
+      <feedback><text>Correct — it matches anything.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>A missing value</text>
+      <feedback><text>It matches an existing value.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>An error case</text>
+      <feedback><text>Errors must be explicit.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>A default type</text>
+      <feedback><text>Types are inferred separately.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q11 -->
+  <question type="multichoice">
+    <name><text>Pattern Order</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      How are pattern matching rules evaluated?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Top to bottom, first match wins</text>
+      <feedback><text>Correct — order matters.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Bottom to top</text>
+      <feedback><text>Patterns are checked in order.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Randomly</text>
+      <feedback><text>Evaluation order is deterministic.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>All patterns are checked</text>
+      <feedback><text>Evaluation stops at the first match.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q12 -->
+  <question type="multichoice">
+    <name><text>Repeated Variables</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      Why is the pattern <code>b && b = b</code> invalid?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Patterns may not repeat variables</text>
+      <feedback><text>Correct — each variable may appear only once.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>b is not a valid name</text>
+      <feedback><text>The name itself is fine.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Boolean operators cannot be pattern matched</text>
+      <feedback><text>They can be pattern matched.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>It causes infinite recursion</text>
+      <feedback><text>The issue is variable repetition.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q13 -->
+  <question type="multichoice">
+    <name><text>where Clause</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      What is the main advantage of using a <code>where</code> clause?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>Avoids recalculating intermediate values</text>
+      <feedback><text>Exactly — clearer and more efficient.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Improves type inference</text>
+      <feedback><text>Type inference works independently.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Allows mutation</text>
+      <feedback><text>Mutation is not allowed.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>Replaces recursion</text>
+      <feedback><text>They serve different purposes.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q14 -->
+  <question type="multichoice">
+    <name><text>let vs where</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      What is a key difference between <code>let</code> and <code>where</code>?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>let is an expression, where is part of a function definition</text>
+      <feedback><text>Correct — this affects scope and placement.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>where is faster</text>
+      <feedback><text>Performance is not the distinction.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>let cannot define variables</text>
+      <feedback><text>let defines local variables.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>They are identical in all cases</text>
+      <feedback><text>They differ in syntax and scope.</text></feedback>
+    </answer>
+  </question>
+
+  <!-- Q15 -->
+  <question type="multichoice">
+    <name><text>Operator Sections</text></name>
+    <questiontext format="html">
+      <text><![CDATA[
+      What is the expression <code>(1+)</code> an example of?
+      ]]></text>
+    </questiontext>
+    <shuffleanswers>true</shuffleanswers>
+    <single>true</single>
+    <answer fraction="100">
+      <text>An operator section</text>
+      <feedback><text>Correct — a partially applied operator.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>A lambda function</text>
+      <feedback><text>It behaves similarly but is not a lambda.</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>A list constructor</text>
+      <feedback><text>List constructors use (:).</text></feedback>
+    </answer>
+    <answer fraction="0">
+      <text>A type signature</text>
+      <feedback><text>Type signatures use ::</text></feedback>
+    </answer>
+  </question>
+
+</quiz>

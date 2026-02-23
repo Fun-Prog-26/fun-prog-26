@@ -1,0 +1,36 @@
+import Prelude hiding ((.))
+import Data.Char(toUpper)
+
+(.) :: (b -> c) -> (a -> b) -> (a -> c)
+f . g = \x -> f (g x)
+
+sumEvenSquares :: [Int] -> Int
+sumEvenSquares xs = sum (map (\x -> x*x) (filter even xs))
+
+sumEvens :: [Int] -> Int
+sumEvens xs = sum (filter even xs)
+
+sumEvens' :: [Int] -> Int
+sumEvens' xs = sum $ filter even xs
+
+-- fE :: [Int] -> [Int]
+fE xs = filter even xs
+
+sumEvens'' :: [Int] -> Int
+sumEvens'' xs  = sum (map (\x -> x*x) (fE xs))
+
+sumEvens''' :: [Int] -> [Int]
+sumEvens''' xs =  sqr . fE  xs 
+
+sE :: [Int] ->  Int
+sE = sum . map (\x -> x*x) . filter odd
+
+trans xs = map toUpper (addExclamationMark (reverse xs))
+
+trans'' :: String -> String
+trans''  =  addExclamationMark . map toUpper  . reverse
+    
+
+
+addExclamationMark :: [Char] -> [Char]
+addExclamationMark xs = xs ++ "!"    -- (addExclamationMark.1)

@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<question type="category">
+  <category>
+    <text>FunProg-25/Topic5-ListComprehensions</text>
+  </category>
+</question>
+
+
+<question type="multichoice">
+  <name><text>Q1 Squares Comprehension</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What is the result of:<br><br><code>[x^2 | x &lt;- [1..5]]</code>]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>[1,2,3,4,5]</text>
+    <feedback><text>This is just the original list. The comprehension squares each element.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[2,4,6,8,10]</text>
+    <feedback><text>That would be doubling each element (2*x), not squaring.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>[1,4,9,16,25]</text>
+    <feedback><text>Correct. Each element in [1..5] is squared.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[1,8,27,64,125]</text>
+    <feedback><text>Those are cubes (x^3), not squares.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q2 Generator</text></name>
+  <questiontext format="html">
+    <text><![CDATA[In a list comprehension, the expression:<br><br><code>x &lt;- [1..5]</code><br><br>is called:]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>A guard</text>
+    <feedback><text>Guards restrict values; they do not introduce them.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>A generator</text>
+    <feedback><text>Correct. A generator introduces values from a list.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>A predicate</text>
+    <feedback><text>A predicate returns True or False; this generates values.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>A filter</text>
+    <feedback><text>Filtering happens using guards, not generators.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q3 Multiple Generators</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What is the result of:<br><br><code>[(x,y) | x &lt;- [1,2], y &lt;- [3,4]]</code>]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>[(1,3),(2,4)]</text>
+    <feedback><text>This resembles zip. Multiple generators create all combinations.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>[(1,3),(1,4),(2,3),(2,4)]</text>
+    <feedback><text>Correct. Generators behave like nested loops.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[(1,2),(3,4)]</text>
+    <feedback><text>These elements do not match the generator lists.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[(3,1),(4,2)]</text>
+    <feedback><text>The order of values in each pair is reversed.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q4 Generator Order</text></name>
+  <questiontext format="html">
+    <text><![CDATA[Changing the order of generators in a comprehension:]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>Does not change anything</text>
+    <feedback><text>Generator order affects output order.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Changes only performance</text>
+    <feedback><text>It changes the order of results, not just efficiency.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>Changes the order of results</text>
+    <feedback><text>Correct. Later generators vary more rapidly.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Causes a type error</text>
+    <feedback><text>Changing order is valid and type-correct.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q5 Dependent Generators</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What is the result of:<br><br><code>[(x,y) | x &lt;- [1..3], y &lt;- [x..3]]</code>]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="100">
+    <text>[(1,1),(1,2),(1,3),(2,2),(2,3),(3,3)]</text>
+    <feedback><text>Correct. The second generator depends on x.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[(1,2),(2,3)]</text>
+    <feedback><text>This omits valid pairs.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[(1,1),(2,1),(3,1)]</text>
+    <feedback><text>y cannot be less than x here.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[(1,3),(2,3),(3,3)]</text>
+    <feedback><text>This omits intermediate values.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q6 Concat Definition</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does the comprehension <code>[x | xs &lt;- xss, x &lt;- xs]</code> define?]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>Reverse of a list</text>
+    <feedback><text>Nothing here reverses order.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>Flattening a list of lists</text>
+    <feedback><text>Correct. It concatenates nested lists.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Sorting a list</text>
+    <feedback><text>There is no comparison logic.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Filtering nested lists</text>
+    <feedback><text>All elements are preserved.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q7 Guards</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What is the result of:<br><br><code>[x | x &lt;- [1..10], even x]</code>]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>[1,3,5,7,9]</text>
+    <feedback><text>These are odd numbers.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>[2,4,6,8,10]</text>
+    <feedback><text>Correct. The guard keeps even numbers.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[10,8,6,4,2]</text>
+    <feedback><text>The comprehension preserves order.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[1..10]</text>
+    <feedback><text>The guard removes odd numbers.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q8 Guard Purpose</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does a guard do in a list comprehension?]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>Introduces variables</text>
+    <feedback><text>Generators introduce variables.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>Restricts generated values</text>
+    <feedback><text>Correct. Guards filter results.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Combines lists</text>
+    <feedback><text>Guards do not combine lists.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Converts types</text>
+    <feedback><text>Guards evaluate to Bool.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q9 Factors</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does <code>factors 15</code> return?]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>[1,15]</text>
+    <feedback><text>15 has more divisors.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[3,5]</text>
+    <feedback><text>These are factors but not all factors.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>[1,3,5,15]</text>
+    <feedback><text>Correct. These divide 15 exactly.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[5,10,15]</text>
+    <feedback><text>10 is not a divisor of 15.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q10 Prime Definition</text></name>
+  <questiontext format="html">
+    <text><![CDATA[According to the implementation, a number n is prime if:]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>It has exactly two factors</text>
+    <feedback><text>That is mathematically true, but not the code definition used.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>factors n == [1,n]</text>
+    <feedback><text>Correct. This matches the implementation.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>It is even</text>
+    <feedback><text>Most even numbers are not prime.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>It is greater than 1</text>
+    <feedback><text>Many numbers greater than 1 are composite.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q11 Primes Function</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does <code>primes 10</code> return?]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>[1,2,3,5,7]</text>
+    <feedback><text>1 is not prime.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>[2,3,5,7]</text>
+    <feedback><text>Correct. These are primes up to 10.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[3,5,7,9]</text>
+    <feedback><text>9 is composite.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[2,4,6,8,10]</text>
+    <feedback><text>Only 2 is prime here.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q12 Pairs</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does <code>pairs xs = zip xs (tail xs)</code> produce?]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>All combinations of elements</text>
+    <feedback><text>That would require two generators.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>Adjacent element pairs</text>
+    <feedback><text>Correct. Each element is paired with the next.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Sorted list</text>
+    <feedback><text>zip does not reorder elements.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Reverse list</text>
+    <feedback><text>Nothing here reverses the list.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q13 Sorted</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does <code>sorted xs = and [x &lt;= y | (x,y) &lt;- pairs xs]</code> check?]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>All elements are equal</text>
+    <feedback><text>It checks ordering, not equality.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>All adjacent pairs are ordered</text>
+    <feedback><text>Correct. It verifies non-decreasing order.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>List contains duplicates</text>
+    <feedback><text>Duplicates are allowed.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>List length is even</text>
+    <feedback><text>Length is unrelated.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q14 Positions</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does <code>positions 0 [1,0,0,1,0,1,1,0]</code> return?]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="0">
+    <text>[0,2,4,6]</text>
+    <feedback><text>These indices are incorrect.</text></feedback>
+  </answer>
+
+  <answer fraction="100">
+    <text>[1,2,4,7]</text>
+    <feedback><text>Correct. These are the positions of 0.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[2,3,5,8]</text>
+    <feedback><text>These do not match the actual indices.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>[0,1,2,3]</text>
+    <feedback><text>The first four elements are not all 0.</text></feedback>
+  </answer>
+</question>
+
+<question type="multichoice">
+  <name><text>Q15 Length via Comprehension</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does <code>length xs = sum [1 | _ &lt;- xs]</code> do?]]></text>
+  </questiontext>
+  <shuffleanswers>true</shuffleanswers>
+  <single>true</single>
+
+  <answer fraction="100">
+    <text>Counts elements using a comprehension</text>
+    <feedback><text>Correct. Each element contributes 1 to the sum.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Filters elements</text>
+    <feedback><text>No filtering occurs.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Squares elements</text>
+    <feedback><text>No arithmetic is applied to the elements.</text></feedback>
+  </answer>
+
+  <answer fraction="0">
+    <text>Sorts the list</text>
+    <feedback><text>The order is preserved.</text></feedback>
+  </answer>
+</question>
+</quiz>
