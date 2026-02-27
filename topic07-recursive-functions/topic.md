@@ -4,4 +4,4 @@ icon:
     color: yellow
 ---
 # 07: Recursive Functions
-Recursive functions in Haskell using lists. 
+Recursive functions in Haskell. 
