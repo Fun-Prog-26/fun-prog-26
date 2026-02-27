@@ -1,3 +1,7 @@
-# 6: Recursive      Functions
-
+---
+icon:
+    type: wpf:recurring-appointment
+    color: yellow
+---
+# 07: Recursive Functions
 Recursive functions in Haskell using lists. 
