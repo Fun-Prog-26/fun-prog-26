@@ -20,19 +20,19 @@ weeks :
       type  : Reading Week
   - 2026-02-23 :
       title : 5
-      type  : Tuition
+      type  : Lists, Stack
   - 2026-03-02 :
       title : 6
-      type  : Tuition
+      type  : Recursion, hofs
   - 2026-03-09 :
       title : 7
-      type  : Tuition
+      type  : Stack test, interactive, declaring types
   - 2026-03-16 :
       title : 8
-      type  : Tuition
+      type  : Monoids, functors, applicatives, monads
   - 2026-03-23 :
       title : 9 
-      type  : Tuition
+      type  :Parsing, intro to assignment
   - 2026-03-30 :
       title : Easter 1
       type  : Reading
@@ -41,13 +41,13 @@ weeks :
       type  : Reading
   - 2026-04-13 :
       title : 10
-      type  : Tuition
+      type  : Monads, parsing, property-based testing
   - 2026-04-20 :
       title : 11
-      type  : Tuition
+      type  : finish and assignment help
   - 2026-04-27 :
       title : 12
-      type  : Tuition
+      type  : finish and assignment help
   - 2026-05-04 :
       title : 13
       type  : Exam weeks/Interviews
