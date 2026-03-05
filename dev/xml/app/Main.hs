@@ -19,7 +19,7 @@ main = do
 printStudentName :: XML.Element -> IO ()
 printStudentName student = do
     let nameElements =
-            filter isIdElement
+            filter isNameElement
                    (onlyElements (XML.elementNodes student))
 
     mapM_ (printNameContent) nameElements

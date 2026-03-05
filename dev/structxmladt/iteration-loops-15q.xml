@@ -1,0 +1,625 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quiz>
+  <question type="multichoice">
+    <name>
+      <text>Purpose of loops</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[What is the main purpose of using a loop in programming?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[To execute a set of statements only once]]></text>
+      <feedback format="html">
+        <text><![CDATA[That’s what happens without loops — they repeat, not run once.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[To repeat a set of statements multiple times]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! Loops automate repetition in code.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[To compare two numbers]]></text>
+      <feedback format="html">
+        <text><![CDATA[Comparisons happen inside conditions, not loops themselves.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[To define a variable]]></text>
+      <feedback format="html">
+        <text><![CDATA[Variables can exist inside loops, but that’s not their main purpose.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Loop types in Java</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[In Java, which of these is &lt;em&gt;not&lt;/em&gt; a type of loop?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[while]]></text>
+      <feedback format="html">
+        <text><![CDATA[`while` is a valid Java loop type.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[for]]></text>
+      <feedback format="html">
+        <text><![CDATA[`for` loops are one of the main loop structures.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[do while]]></text>
+      <feedback format="html">
+        <text><![CDATA[`do while` is another valid Java loop type.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[repeat until]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct — Java doesn’t have `repeat until`; that’s used in other languages.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>What controls loop continuation</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[What is the control structure that allows a loop to continue or stop?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Boolean condition]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! The condition decides whether the loop keeps running.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[String comparison]]></text>
+      <feedback format="html">
+        <text><![CDATA[You can compare strings, but that doesn’t control a loop directly.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Arithmetic operator]]></text>
+      <feedback format="html">
+        <text><![CDATA[Operators perform math, not control repetition.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Input statement]]></text>
+      <feedback format="html">
+        <text><![CDATA[Inputs can influence loops, but they don’t control them.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>While syntax</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Which of the following is the correct general form of a &lt;code&gt;while&lt;/code&gt; loop?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[while (condition) { statements }]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! This is the standard structure of a while loop in Java.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[loop (condition) { statements }]]></text>
+      <feedback format="html">
+        <text><![CDATA[`loop` is not a Java keyword.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[do { condition } while { statements }]]></text>
+      <feedback format="html">
+        <text><![CDATA[The order is reversed — that’s not valid syntax.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[repeat (condition) { statements }]]></text>
+      <feedback format="html">
+        <text><![CDATA[`repeat` is not recognised in Java.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>LCV responsibilities</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[In a &lt;code&gt;while&lt;/code&gt; loop, the loop control variable (LCV) must be:]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Declared but never updated]]></text>
+      <feedback format="html">
+        <text><![CDATA[Without updating, the loop might never end!]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Updated only after the loop]]></text>
+      <feedback format="html">
+        <text><![CDATA[The LCV must change during the loop.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Declared, tested, and updated inside or before the loop]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! The LCV needs all three steps to control iteration.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Automatically managed by Java]]></text>
+      <feedback format="html">
+        <text><![CDATA[Java doesn’t automatically manage the loop variable for &lt;code&gt;while&lt;/code&gt; loops.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Always-true while</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[What happens if the Boolean condition in a &lt;code&gt;while&lt;/code&gt; loop is always &lt;code&gt;true&lt;/code&gt;?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The loop runs once]]></text>
+      <feedback format="html">
+        <text><![CDATA[It keeps going, not just once!]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The program crashes]]></text>
+      <feedback format="html">
+        <text><![CDATA[It won’t crash automatically — it just won’t stop.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[The loop runs infinitely]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! A &lt;code&gt;true&lt;/code&gt; condition causes an infinite loop unless broken.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[The compiler rejects it]]></text>
+      <feedback format="html">
+        <text><![CDATA[It’s valid Java syntax — the issue happens at runtime.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Hello World while count</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[How many times will this code print “Hello World”?&lt;pre&gt;&lt;code&gt;int i = 1;
+while (i &lt;= 4) {
+    System.out.println(&quot;Hello World&quot;);
+    i++;
+}&lt;/code&gt;&lt;/pre&gt;]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[3]]></text>
+      <feedback format="html">
+        <text><![CDATA[No — it starts at 1 and ends at 4, giving 4 prints.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[4]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! It prints 4 times: when i = 1, 2, 3, 4.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[5]]></text>
+      <feedback format="html">
+        <text><![CDATA[It stops before i reaches 5.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Infinite]]></text>
+      <feedback format="html">
+        <text><![CDATA[The counter increases, so it won’t loop forever.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>For header visibility</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Which parts are &lt;em&gt;explicitly visible&lt;/em&gt; in a &lt;code&gt;for&lt;/code&gt; loop header?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Initialisation, condition, post-body action]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! All three are part of a for loop’s header.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Only the condition]]></text>
+      <feedback format="html">
+        <text><![CDATA[That describes a &lt;code&gt;while&lt;/code&gt; loop, not a &lt;code&gt;for&lt;/code&gt; loop.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Only initialisation and condition]]></text>
+      <feedback format="html">
+        <text><![CDATA[The increment (post-body) is also visible.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Only post-body action]]></text>
+      <feedback format="html">
+        <text><![CDATA[You can’t have just an increment in a &lt;code&gt;for&lt;/code&gt; header.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Infinite for</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Which of the following &lt;code&gt;for&lt;/code&gt; loop headers would create an infinite loop?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[for ( ; ; )]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct — without a condition, the loop never ends.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[for (int i = 0; i &lt; 5; i++)]]></text>
+      <feedback format="html">
+        <text><![CDATA[That loop stops when i reaches 5.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[for (int i = 10; i &gt; 0; i--)]]></text>
+      <feedback format="html">
+        <text><![CDATA[That loop stops when i reaches 0.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[for (int i = 1; i &lt;= 10; i++)]]></text>
+      <feedback format="html">
+        <text><![CDATA[It ends when i is greater than 10.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>For update location</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[In a &lt;code&gt;for&lt;/code&gt; loop, where is the &lt;em&gt;update of the LCV&lt;/em&gt; typically located?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Before the loop]]></text>
+      <feedback format="html">
+        <text><![CDATA[The update occurs after each iteration, not before.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Inside the loop body]]></text>
+      <feedback format="html">
+        <text><![CDATA[It can be, but typically it’s in the header.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[In the third part of the loop header]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! The update expression is the third element in the header.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[After the loop ends]]></text>
+      <feedback format="html">
+        <text><![CDATA[Updating after the loop wouldn’t affect loop control.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>For output sequence</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[What output will this code produce?
+&lt;pre&gt;&lt;code&gt;for (int i = 1; i &lt;= 3; i++) {
+    System.out.println(&quot;Num: &quot; + i);
+}&lt;/code&gt;&lt;/pre&gt;]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Num: 0, Num: 1, Num: 2]]></text>
+      <feedback format="html">
+        <text><![CDATA[The loop starts at 1, not 0.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Num: 1, Num: 2, Num: 3]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! i takes the values 1, 2, 3.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Num: 1, Num: 2, Num: 3, Num: 4]]></text>
+      <feedback format="html">
+        <text><![CDATA[It stops before i reaches 4.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[None]]></text>
+      <feedback format="html">
+        <text><![CDATA[The loop definitely executes three times.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>While vs Do-while difference</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[What is the main difference between a &lt;code&gt;while&lt;/code&gt; loop and a &lt;code&gt;do while&lt;/code&gt; loop?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[while runs once, do while runs many times]]></text>
+      <feedback format="html">
+        <text><![CDATA[Both can run multiple times depending on the condition.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[do while runs its body before testing the condition]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! &lt;code&gt;do while&lt;/code&gt; checks after executing once.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[do while can’t use Boolean conditions]]></text>
+      <feedback format="html">
+        <text><![CDATA[It uses Boolean conditions just like &lt;code&gt;while&lt;/code&gt;.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[There is no difference]]></text>
+      <feedback format="html">
+        <text><![CDATA[They differ in when the condition is checked.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>Do-while syntax</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Which of the following is the correct syntax for a &lt;code&gt;do while&lt;/code&gt; loop?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[do { statements } while (condition);]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! The semicolon is required after the while condition.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[while { statements } do (condition);]]></text>
+      <feedback format="html">
+        <text><![CDATA[The order of keywords is wrong.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[loop (condition) { statements }]]></text>
+      <feedback format="html">
+        <text><![CDATA[`loop` is not a Java keyword.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[do while { statements }]]></text>
+      <feedback format="html">
+        <text><![CDATA[Missing braces and condition placement are incorrect.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>When to choose do-while</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[When should you choose a &lt;code&gt;do while&lt;/code&gt; loop instead of a &lt;code&gt;while&lt;/code&gt; loop?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[When the body must run at least once]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! A &lt;code&gt;do while&lt;/code&gt; ensures the body executes before testing.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[When the condition should never be checked]]></text>
+      <feedback format="html">
+        <text><![CDATA[It still checks the condition — just afterward.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[When the loop must never terminate]]></text>
+      <feedback format="html">
+        <text><![CDATA[That would be a logic error, not a reason to use it.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[When you don’t need a counter]]></text>
+      <feedback format="html">
+        <text><![CDATA[Both loop types can use or omit counters.]]></text>
+      </feedback>
+    </answer>
+  </question>
+  <question type="multichoice">
+    <name>
+      <text>LCV definition</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[What do we call a variable that controls how many times a loop executes?]]></text>
+    </questiontext>
+    <generalfeedback>
+      <text/>
+    </generalfeedback>
+    <defaultgrade>1</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Sentinel variable]]></text>
+      <feedback format="html">
+        <text><![CDATA[A sentinel controls when to stop based on data, not a counter.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Loop control variable]]></text>
+      <feedback format="html">
+        <text><![CDATA[Correct! The LCV determines how the loop progresses.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Incrementer]]></text>
+      <feedback format="html">
+        <text><![CDATA[Incrementing is one part of what an LCV does.]]></text>
+      </feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Boolean variable]]></text>
+      <feedback format="html">
+        <text><![CDATA[The LCV might be tested by a Boolean condition, but isn’t one itself.]]></text>
+      </feedback>
+    </answer>
+  </question>
+</quiz>
