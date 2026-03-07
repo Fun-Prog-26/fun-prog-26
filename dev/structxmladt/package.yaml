@@ -38,6 +38,8 @@ library:
   dependencies:
   - text
   - xml-conduit
+  - pretty
+  - parsec
 
 
 executables:

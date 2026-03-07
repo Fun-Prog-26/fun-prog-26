@@ -5,9 +5,20 @@ module Adts where
 
 import qualified Data.Text as T
 
+
 data Quiz = Quiz
-  { quizQuestions :: [Question]
+  { quizCategory  :: Category,
+    quizQuestions :: [Question]
   } deriving (Show, Eq)
+
+data Category 
+  = Introduction
+  | Arrays
+  | Loops 
+  | ArrayLists
+  | ShopWitArrayLists
+  | NoCategory
+   deriving (Show, Eq) 
 
 data QuestionType
   = MultiChoice
@@ -24,7 +35,15 @@ data Answer = Answer
 
 data Question = Question
   { qType      :: QuestionType
+  , qCategory  :: Category
   , qName      :: Maybe T.Text
   , qText      :: Maybe T.Text
   , qAnswers   :: [Answer]
   } deriving (Show, Eq)
+
+
+data Inline = Plain T.Text
+   | Bold T.Text
+   | Italic T.Text
+   | Code T.Text
+  deriving (Show)

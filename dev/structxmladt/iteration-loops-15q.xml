@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<quiz>
-  <question type="multichoice">
+<quiz category="loops">
+  <question type="multichoice" category="loops">
     <name>
       <text>Purpose of loops</text>
     </name>
@@ -41,7 +41,7 @@
       </feedback>
     </answer>
   </question>
-  <question type="multichoice">
+  <question type="multichoice"category="arrays">
     <name>
       <text>Loop types in Java</text>
     </name>
