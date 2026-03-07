@@ -4,5 +4,5 @@ icon:
   color: mediumvioletred
 ---
 # 08: Tutorial-09
-Function Composition and Function Application
+Exercises on Function Composition and Function Application
 
