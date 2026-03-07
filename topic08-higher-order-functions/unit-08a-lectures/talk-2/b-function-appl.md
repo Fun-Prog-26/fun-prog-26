@@ -1,6 +1,7 @@
 ---
- icon: mdi:application-import
- color: mediumvioletred
+ icon: 
+    type: mdi:application-import
+    color: mediumvioletred
 ---
 # 07:Function Application $ 
 Using $ 
