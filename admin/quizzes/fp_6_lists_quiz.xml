@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- Q1 -->
+<question type="multichoice">
+  <name><text>List Comprehension Purpose</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What is the main purpose of list comprehensions in Haskell?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>To construct new lists from existing lists</text>
+    <feedback><text><![CDATA[Correct. List comprehensions provide a concise way to build new lists from existing ones.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>To define new data types</text>
+    <feedback><text><![CDATA[Incorrect. Data types are defined using data declarations, not list comprehensions.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>To perform input/output operations</text>
+    <feedback><text><![CDATA[Incorrect. IO operations are handled using the IO monad.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>To define recursive functions</text>
+    <feedback><text><![CDATA[Incorrect. Recursion can be used with lists, but list comprehensions themselves do not define recursion.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q2 -->
+<question type="multichoice">
+  <name><text>Square List Example</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What is the result of the Haskell expression: <code>[x^2 | x <- [1..5]]</code>?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>[1,4,9,16,25]</text>
+    <feedback><text><![CDATA[Correct. Each number from 1 to 5 is squared.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[2,3,4,5,6]</text>
+    <feedback><text><![CDATA[Incorrect. This would correspond to adding 1 to each value.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[1,2,3,4,5]</text>
+    <feedback><text><![CDATA[Incorrect. This is simply the original list.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[1,8,27,64,125]</text>
+    <feedback><text><![CDATA[Incorrect. That would represent cubes rather than squares.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q3 -->
+<question type="multichoice">
+  <name><text>Generator Meaning</text></name>
+  <questiontext format="html">
+    <text><![CDATA[In a list comprehension like <code>[x^2 | x <- [1..5]]</code>, what is <code>x <- [1..5]</code> called?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>A generator</text>
+    <feedback><text><![CDATA[Correct. A generator specifies how values are produced for the variable.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>A guard</text>
+    <feedback><text><![CDATA[Incorrect. Guards are Boolean conditions used to filter values.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>A type declaration</text>
+    <feedback><text><![CDATA[Incorrect. Type declarations specify types using :: syntax.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>A pattern match</text>
+    <feedback><text><![CDATA[Incorrect. Pattern matching is used in function definitions and case expressions.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q4 -->
+<question type="multichoice">
+  <name><text>Multiple Generators</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What is the result of <code>[(x,y) | x <- [1,2], y <- [3,4]]</code>?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>[(1,3),(1,4),(2,3),(2,4)]</text>
+    <feedback><text><![CDATA[Correct. The second generator iterates fully for each value of the first.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[(1,3),(2,4)]</text>
+    <feedback><text><![CDATA[Incorrect. This would only pair corresponding elements.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[(1,2),(3,4)]</text>
+    <feedback><text><![CDATA[Incorrect. This does not follow generator semantics.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[(3,1),(4,2)]</text>
+    <feedback><text><![CDATA[Incorrect. The order and pairing are incorrect.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q5 -->
+<question type="multichoice">
+  <name><text>Generator Order</text></name>
+  <questiontext format="html">
+    <text><![CDATA[Changing the order of generators in a list comprehension primarily changes what?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>The order of elements produced in the resulting list</text>
+    <feedback><text><![CDATA[Correct. The order of generators affects how results are produced.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>The type of the list</text>
+    <feedback><text><![CDATA[Incorrect. Generator order does not affect the type.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>The syntax of Haskell</text>
+    <feedback><text><![CDATA[Incorrect. Syntax remains unchanged.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>The length of the original list</text>
+    <feedback><text><![CDATA[Incorrect. The source lists remain unchanged.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q6 -->
+<question type="multichoice">
+  <name><text>Dependent Generators</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does it mean for a generator to be dependent?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>A later generator uses variables introduced by an earlier generator</text>
+    <feedback><text><![CDATA[Correct. Dependent generators rely on variables from earlier ones.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>Generators must always use the same list</text>
+    <feedback><text><![CDATA[Incorrect. Generators can use different lists.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>The generator runs only once</text>
+    <feedback><text><![CDATA[Incorrect. Generators typically run multiple times.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>It depends on the compiler</text>
+    <feedback><text><![CDATA[Incorrect. Dependency is defined by the comprehension structure.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q7 -->
+<question type="multichoice">
+  <name><text>Concat Definition</text></name>
+  <questiontext format="html">
+    <text><![CDATA[Which list comprehension defines the behaviour of <code>concat</code>?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>[x | xs <- xss, x <- xs]</text>
+    <feedback><text><![CDATA[Correct. Each inner list is traversed to extract its elements.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[xs | x <- xss]</text>
+    <feedback><text><![CDATA[Incorrect. This would return lists rather than elements.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[xss | xs <- xss]</text>
+    <feedback><text><![CDATA[Incorrect. This does not flatten the lists.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[x | x <- xss]</text>
+    <feedback><text><![CDATA[Incorrect. xss contains lists, not elements.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q8 -->
+<question type="multichoice">
+  <name><text>Guards</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What is the purpose of a guard in a list comprehension?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>To filter values produced by generators</text>
+    <feedback><text><![CDATA[Correct. Guards restrict which elements are included.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>To define a new type</text>
+    <feedback><text><![CDATA[Incorrect. Guards are Boolean conditions, not type declarations.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>To stop recursion</text>
+    <feedback><text><![CDATA[Incorrect. Guards do not control recursion.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>To create infinite lists</text>
+    <feedback><text><![CDATA[Incorrect. Guards only filter values.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q9 -->
+<question type="multichoice">
+  <name><text>Even Numbers</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does <code>[x | x <- [1..10], even x]</code> produce?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>[2,4,6,8,10]</text>
+    <feedback><text><![CDATA[Correct. The guard keeps only even numbers.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[1,3,5,7,9]</text>
+    <feedback><text><![CDATA[Incorrect. These are odd numbers.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[1..10]</text>
+    <feedback><text><![CDATA[Incorrect. The guard filters values.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>[10]</text>
+    <feedback><text><![CDATA[Incorrect. All even numbers are included.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q10 -->
+<question type="multichoice">
+  <name><text>Factors Function</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does the function <code>factors n = [x | x <- [1..n], n `mod` x == 0]</code> compute?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>All divisors of n</text>
+    <feedback><text><![CDATA[Correct. It returns every number that divides n exactly.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>All numbers less than n</text>
+    <feedback><text><![CDATA[Incorrect. Only divisors are returned.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>All prime numbers up to n</text>
+    <feedback><text><![CDATA[Incorrect. This function lists factors, not primes.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>The squares of numbers up to n</text>
+    <feedback><text><![CDATA[Incorrect. Squaring is not involved here.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q11 -->
+<question type="multichoice">
+  <name><text>Prime Definition</text></name>
+  <questiontext format="html">
+    <text><![CDATA[According to the slides, when is a number considered prime?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>When its factors are exactly [1,n]</text>
+    <feedback><text><![CDATA[Correct. A prime number has only two factors: 1 and itself.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>When it is divisible by 2</text>
+    <feedback><text><![CDATA[Incorrect. Many primes are not divisible by 2.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>When it is greater than 10</text>
+    <feedback><text><![CDATA[Incorrect. Primality does not depend on size.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>When it appears in the primes function</text>
+    <feedback><text><![CDATA[Incorrect. The primes function uses the definition of primality.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q12 -->
+<question type="multichoice">
+  <name><text>Zip Function</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does the function <code>zip</code> do?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>Combines two lists into a list of pairs</text>
+    <feedback><text><![CDATA[Correct. zip pairs corresponding elements from two lists.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>Sorts a list</text>
+    <feedback><text><![CDATA[Incorrect. zip does not perform sorting.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>Concatenates lists</text>
+    <feedback><text><![CDATA[Incorrect. concat performs concatenation.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>Removes duplicate elements</text>
+    <feedback><text><![CDATA[Incorrect. zip only pairs elements.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q13 -->
+<question type="multichoice">
+  <name><text>Pairs Function</text></name>
+  <questiontext format="html">
+    <text><![CDATA[What does the function <code>pairs xs = zip xs (tail xs)</code> return?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>A list of adjacent pairs from the list</text>
+    <feedback><text><![CDATA[Correct. Each element is paired with the next one.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>A sorted list</text>
+    <feedback><text><![CDATA[Incorrect. Sorting is not performed.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>A list with duplicates removed</text>
+    <feedback><text><![CDATA[Incorrect. pairs only creates adjacent pairs.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>The reversed list</text>
+    <feedback><text><![CDATA[Incorrect. The order of elements remains unchanged.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q14 -->
+<question type="multichoice">
+  <name><text>Strings as Lists</text></name>
+  <questiontext format="html">
+    <text><![CDATA[How are strings represented internally in Haskell?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>As lists of characters</text>
+    <feedback><text><![CDATA[Correct. A string like "abc" is equivalent to ['a','b','c'].]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>As arrays</text>
+    <feedback><text><![CDATA[Incorrect. Haskell represents strings as lists.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>As integers</text>
+    <feedback><text><![CDATA[Incorrect. Strings are not numeric types.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>As tuples</text>
+    <feedback><text><![CDATA[Incorrect. Strings are lists, not tuples.]]></text></feedback>
+  </answer>
+</question>
+
+<!-- Q15 -->
+<question type="multichoice">
+  <name><text>Length with Comprehension</text></name>
+  <questiontext format="html">
+    <text><![CDATA[How is the length of a list defined using a list comprehension?]]></text>
+  </questiontext>
+  <answer fraction="100">
+    <text>length xs = sum [1 | _ <- xs]</text>
+    <feedback><text><![CDATA[Correct. Each element contributes 1 to the sum.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>length xs = xs + 1</text>
+    <feedback><text><![CDATA[Incorrect. Lists cannot be added to numbers.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>length xs = map length xs</text>
+    <feedback><text><![CDATA[Incorrect. That would compute lengths of elements.]]></text></feedback>
+  </answer>
+  <answer fraction="0">
+    <text>length xs = [x | x <- xs]</text>
+    <feedback><text><![CDATA[Incorrect. This simply recreates the list.]]></text></feedback>
+  </answer>
+</question>
+
+</quiz>

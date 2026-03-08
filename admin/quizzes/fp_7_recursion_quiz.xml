@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- Question 1 -->
+<question type="multichoice">
+<name><text>Recursion Definition</text></name>
+<questiontext format="html">
+<text><![CDATA[What does it mean for something to be recursive?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>It is defined in terms of itself</text>
+<feedback><text><![CDATA[Correct. A recursive definition refers to itself when defining a value or function.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>It always uses loops</text>
+<feedback><text><![CDATA[Incorrect. Loops describe iteration rather than recursion.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>It must operate on lists</text>
+<feedback><text><![CDATA[Incorrect. Recursion can be used with numbers, lists, trees, and many other structures.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>It produces infinite results</text>
+<feedback><text><![CDATA[Incorrect. Recursion terminates when the base case is reached.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 2 -->
+<question type="multichoice">
+<name><text>Recursion vs Iteration</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the key difference between recursion and iteration?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>Iteration repeats while a condition holds, recursion repeats on smaller parts of the problem</text>
+<feedback><text><![CDATA[Correct. Iteration uses loops while recursion solves smaller versions of the problem.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Iteration uses numbers while recursion uses lists</text>
+<feedback><text><![CDATA[Incorrect. Both approaches can work with many types of data.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Recursion is always faster</text>
+<feedback><text><![CDATA[Incorrect. Iterative definitions are often more efficient.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Iteration cannot terminate</text>
+<feedback><text><![CDATA[Incorrect. Both recursion and iteration can terminate depending on their conditions.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 3 -->
+<question type="multichoice">
+<name><text>Base Case</text></name>
+<questiontext format="html">
+<text><![CDATA[In recursion, what is the purpose of the base case?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>To stop the recursive calls</text>
+<feedback><text><![CDATA[Correct. The base case prevents infinite recursion.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>To repeat the function</text>
+<feedback><text><![CDATA[Incorrect. Recursive calls repeat the function, not the base case.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>To initialise variables</text>
+<feedback><text><![CDATA[Incorrect. Base cases define termination conditions rather than variable initialisation.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>To sort lists</text>
+<feedback><text><![CDATA[Incorrect. Base cases appear in many recursive functions, not just sorting.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 4 -->
+<question type="multichoice">
+<name><text>Recursive Factorial Definition</text></name>
+<questiontext format="html">
+<text><![CDATA[Which of the following is the recursive definition of factorial in Haskell?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text><![CDATA[
+fac 0 = 1
+fac n = n * fac (n-1)
+]]></text>
+<feedback><text><![CDATA[Correct. This multiplies n by the factorial of its predecessor.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[
+fac n = n + fac (n-1)
+]]></text>
+<feedback><text><![CDATA[Incorrect. Factorial requires multiplication rather than addition.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[
+fac n = n * (n-1)
+]]></text>
+<feedback><text><![CDATA[Incorrect. This does not recursively compute factorial.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[
+fac n = product [1..n]
+]]></text>
+<feedback><text><![CDATA[Incorrect. This definition uses a library function rather than recursion.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 5 -->
+<question type="multichoice">
+<name><text>Factorial Evaluation</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the result of evaluating <code>fac 3</code>?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>6</text>
+<feedback><text><![CDATA[Correct. fac 3 = 3 * 2 * 1 = 6.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>3</text>
+<feedback><text><![CDATA[Incorrect. Factorial multiplies descending integers down to 1.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>9</text>
+<feedback><text><![CDATA[Incorrect. This would be squaring the number.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>24</text>
+<feedback><text><![CDATA[Incorrect. 24 is the value of 4!.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 6 -->
+<question type="multichoice">
+<name><text>Factorial Divergence</text></name>
+<questiontext format="html">
+<text><![CDATA[Why does the recursive factorial definition fail for negative numbers?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>The base case is never reached</text>
+<feedback><text><![CDATA[Correct. Recursive calls continue indefinitely for negative integers.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Multiplication cannot be applied to negatives</text>
+<feedback><text><![CDATA[Incorrect. Multiplication works with negative numbers.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Haskell does not support negative integers</text>
+<feedback><text><![CDATA[Incorrect. Haskell fully supports negative numbers.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>The recursion stops immediately</text>
+<feedback><text><![CDATA[Incorrect. The recursion continues forever instead.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 7 -->
+<question type="multichoice">
+<name><text>Recursive Product</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the result of evaluating <code>product [2,3,4]</code> using the recursive definition?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>24</text>
+<feedback><text><![CDATA[Correct. 2 * 3 * 4 = 24.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>9</text>
+<feedback><text><![CDATA[Incorrect. That would be the sum of elements.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>12</text>
+<feedback><text><![CDATA[Incorrect. This is not the full product.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>6</text>
+<feedback><text><![CDATA[Incorrect. Only the first two elements would produce 6.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 8 -->
+<question type="multichoice">
+<name><text>Identity for Product</text></name>
+<questiontext format="html">
+<text><![CDATA[Why does the recursive definition use <code>product [] = 1</code>?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>Because 1 is the identity element for multiplication</text>
+<feedback><text><![CDATA[Correct. Multiplying by 1 leaves values unchanged.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Because empty lists must return 1</text>
+<feedback><text><![CDATA[Incorrect. This is specific to multiplication.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Because recursion requires positive values</text>
+<feedback><text><![CDATA[Incorrect. The value depends on the operation.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Because Haskell cannot return 0</text>
+<feedback><text><![CDATA[Incorrect. Returning 0 would break the multiplication identity.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 9 -->
+<question type="multichoice">
+<name><text>Recursive Length</text></name>
+<questiontext format="html">
+<text><![CDATA[What does this function compute?
+
+<code>
+length [] = 0
+length (_:xs) = 1 + length xs
+</code>]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>The number of elements in a list</text>
+<feedback><text><![CDATA[Correct. Each recursive call counts one element.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>The sum of elements</text>
+<feedback><text><![CDATA[Incorrect. The function counts elements rather than summing them.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>The last element</text>
+<feedback><text><![CDATA[Incorrect. The pattern ignores element values.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>The first element</text>
+<feedback><text><![CDATA[Incorrect. The function counts elements recursively.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 10 -->
+<question type="multichoice">
+<name><text>List Pattern</text></name>
+<questiontext format="html">
+<text><![CDATA[What does the pattern <code>(x:xs)</code> represent?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>A list with head x and tail xs</text>
+<feedback><text><![CDATA[Correct. x is the first element and xs is the remaining list.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>A tuple of two elements</text>
+<feedback><text><![CDATA[Incorrect. Tuples use commas rather than colon syntax.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>A recursive call</text>
+<feedback><text><![CDATA[Incorrect. This is pattern matching on lists.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>A list with exactly two elements</text>
+<feedback><text><![CDATA[Incorrect. xs may contain many elements.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 11 -->
+<question type="multichoice">
+<name><text>Reverse Function</text></name>
+<questiontext format="html">
+<text><![CDATA[What does the function <code>reverse (x:xs) = reverse xs ++ [x]</code> do?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>Reverses the list</text>
+<feedback><text><![CDATA[Correct. The recursive call reverses the tail before appending the head.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Sorts the list</text>
+<feedback><text><![CDATA[Incorrect. Sorting arranges elements in order.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Removes duplicates</text>
+<feedback><text><![CDATA[Incorrect. Duplicate values remain unchanged.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Finds the last element</text>
+<feedback><text><![CDATA[Incorrect. The entire list is reversed.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 12 -->
+<question type="multichoice">
+<name><text>Reverse Evaluation</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the result of evaluating <code>reverse [1,2,3]</code>?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>[3,2,1]</text>
+<feedback><text><![CDATA[Correct. The order of the list is reversed.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[1,3,2]</text>
+<feedback><text><![CDATA[Incorrect. This is not the correct reversed order.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[2,3,1]</text>
+<feedback><text><![CDATA[Incorrect. The order is incorrect.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[3,1,2]</text>
+<feedback><text><![CDATA[Incorrect. This does not match the reverse definition.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 13 -->
+<question type="multichoice">
+<name><text>Insert Function</text></name>
+<questiontext format="html">
+<text><![CDATA[What does the function <code>insert</code> do in insertion sort?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>Inserts an element into a sorted list in the correct position</text>
+<feedback><text><![CDATA[Correct. insert maintains the sorted order of the list.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Reverses the list</text>
+<feedback><text><![CDATA[Incorrect. reverse changes the order but does not sort.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Counts elements in the list</text>
+<feedback><text><![CDATA[Incorrect. That would be done by length.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Removes elements from a list</text>
+<feedback><text><![CDATA[Incorrect. insert adds elements rather than removing them.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 14 -->
+<question type="multichoice">
+<name><text>Insertion Sort</text></name>
+<questiontext format="html">
+<text><![CDATA[What algorithm is implemented by
+
+<code>isort (x:xs) = insert x (isort xs)</code>?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>Insertion sort</text>
+<feedback><text><![CDATA[Correct. The list is sorted by recursively inserting elements.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Merge sort</text>
+<feedback><text><![CDATA[Incorrect. Merge sort divides the list into halves.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Bubble sort</text>
+<feedback><text><![CDATA[Incorrect. Bubble sort repeatedly swaps adjacent elements.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Binary search</text>
+<feedback><text><![CDATA[Incorrect. Binary search finds elements in sorted lists.]]></text></feedback>
+</answer>
+
+</question>
+
+
+<!-- Question 15 -->
+<question type="multichoice">
+<name><text>Quicksort Idea</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the key idea behind the quicksort algorithm?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>Partition the list around a pivot and recursively sort the sublists</text>
+<feedback><text><![CDATA[Correct. Elements smaller than the pivot go left and larger elements go right.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Swap adjacent elements repeatedly</text>
+<feedback><text><![CDATA[Incorrect. That describes bubble sort.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Insert elements one by one into a sorted list</text>
+<feedback><text><![CDATA[Incorrect. That describes insertion sort.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Compare every pair of elements</text>
+<feedback><text><![CDATA[Incorrect. Quicksort avoids comparing all pairs.]]></text></feedback>
+</answer>
+
+</question>
+
+</quiz>
