@@ -17,7 +17,7 @@ ignore         :
 # - topic06-structuring-programs
 # - topic07-recursive-functions
 #- topic08-higher-order-functions
-- topic09-interactive-prog
+#- topic09-interactive-prog
 - topic10-declaring-types-and-classes
 - topic11-functors-applicatives
 - topic12-monads
