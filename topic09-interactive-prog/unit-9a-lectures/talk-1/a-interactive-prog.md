@@ -1,6 +1,6 @@
 ---
  icon: 
-    type: lightcoral
+    type: arcticons:io
     color: lightcoral
 ---
 # 09: Interactive Programming
