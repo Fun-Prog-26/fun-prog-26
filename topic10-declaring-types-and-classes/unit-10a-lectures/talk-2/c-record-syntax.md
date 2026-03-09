@@ -1,6 +1,6 @@
 ---
  icon: 
-    type: streamline-sharp-color:recording-tape-2
+    type: streamline:recording-tape-bubble-square
     color: maroon
 ---
 # 10: Record syntax
