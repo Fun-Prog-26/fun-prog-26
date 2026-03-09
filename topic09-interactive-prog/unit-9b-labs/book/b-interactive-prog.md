@@ -2,7 +2,7 @@
 order: 1
 icon: 
    type: fluent-mdl2:handwriting
-   color: maroon
+   color: lightcoral
 ---
 # 09: Tutorial-05
 Exercises  on Interactive Programming
