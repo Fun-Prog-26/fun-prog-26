@@ -166,6 +166,20 @@ calcBillamtspcts amts tips =map (*1.04) $ zipWith (+) amts $
 \end{lstlisting} 
 \end{solution}
 
+\begin{exercise}
+  What does the following function do and how does it work?
+  \begin{lstlisting}[language=Haskell]
+    clamp :: Double -> Double
+    clamp = max 0 . min 1
+  \end{lstlisting}
+\end{exercise}
+\begin{solution}
+  \textbf{clamp} takes a number and clamps it to the range [0,1]. 
+  It does this by first applying \textit{min 1} to the input, which ensures that the result is 
+  at most 1. Then it applies \textit{max 0} to that result, which ensures that the final 
+  output is at least 0. Thus, any input less than 0 will return 0, any input greater than 1 will 
+  return 1, and any input between 0 and 1 will return itself.
+\end{solution}
 
 
 

@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- ================= CONCEPT QUESTIONS ================= -->
+
+<question type="multichoice">
+<name><text>Higher-order function definition</text></name>
+<questiontext format="html">
+<text><![CDATA[What is a higher-order function in Haskell?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>A function that takes functions as arguments or returns functions</text>
+<feedback><text><![CDATA[Correct. Higher-order functions operate on other functions.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>A function that only works with lists</text>
+<feedback><text><![CDATA[Incorrect. Higher-order functions can work with any data type.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>A function that must use recursion</text>
+<feedback><text><![CDATA[Incorrect. Recursion is unrelated to the definition.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>A function that only returns numbers</text>
+<feedback><text><![CDATA[Incorrect. Higher-order functions can return any type.]]></text></feedback>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name><text>map concept</text></name>
+<questiontext format="html">
+<text><![CDATA[What does the function map do?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>Applies a function to each element of a list</text>
+<feedback><text><![CDATA[Correct. map transforms every element in a list.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Filters elements from a list</text>
+<feedback><text><![CDATA[Incorrect. That describes filter.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Combines two lists</text>
+<feedback><text><![CDATA[Incorrect. That describes zipWith.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Sorts a list</text>
+<feedback><text><![CDATA[Incorrect. map does not reorder elements.]]></text></feedback>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name><text>filter concept</text></name>
+<questiontext format="html">
+<text><![CDATA[What does filter do?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>Selects elements that satisfy a condition</text>
+<feedback><text><![CDATA[Correct. filter keeps values where the predicate returns True.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Transforms every element</text>
+<feedback><text><![CDATA[Incorrect. That describes map.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Combines lists</text>
+<feedback><text><![CDATA[Incorrect. That describes zipWith.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Sorts a list</text>
+<feedback><text><![CDATA[Incorrect. filter does not reorder elements.]]></text></feedback>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name><text>zipWith concept</text></name>
+<questiontext format="html">
+<text><![CDATA[What does zipWith do?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>Applies a function to corresponding elements of two lists</text>
+<feedback><text><![CDATA[Correct. zipWith combines lists element-wise using a function.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Filters two lists</text>
+<feedback><text><![CDATA[Incorrect. zipWith does not filter.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Sorts two lists</text>
+<feedback><text><![CDATA[Incorrect. zipWith does not reorder lists.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>Removes duplicates</text>
+<feedback><text><![CDATA[Incorrect. zipWith only combines elements.]]></text></feedback>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name><text>Function composition meaning</text></name>
+<questiontext format="html">
+<text><![CDATA[What does (f . g) x mean?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>f (g x)</text>
+<feedback><text><![CDATA[Correct. g runs first, then f.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>g (f x)</text>
+<feedback><text><![CDATA[Incorrect. The order is reversed.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>f x + g x</text>
+<feedback><text><![CDATA[Incorrect. Composition does not add results.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>(f g) x</text>
+<feedback><text><![CDATA[Incorrect. This is not composition syntax.]]></text></feedback>
+</answer>
+</question>
+
+
+<!-- ================= TYPE QUESTIONS ================= -->
+
+<question type="multichoice">
+<name><text>Type of map</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the type of map?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>(a -> b) -> [a] -> [b]</text>
+<feedback><text><![CDATA[Correct. map applies a function to each element of a list.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[a] -> [b]</text>
+<feedback><text><![CDATA[Incorrect. map requires a function parameter.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>(a -> b) -> a -> b</text>
+<feedback><text><![CDATA[Incorrect. That is simple function application.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>a -> b -> c</text>
+<feedback><text><![CDATA[Incorrect. This is not the type of map.]]></text></feedback>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name><text>Type of filter</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the type of filter?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>(a -> Bool) -> [a] -> [a]</text>
+<feedback><text><![CDATA[Correct. filter keeps elements satisfying a predicate.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>(a -> b) -> [a] -> [b]</text>
+<feedback><text><![CDATA[Incorrect. That is map.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[a] -> Bool</text>
+<feedback><text><![CDATA[Incorrect. filter returns a list.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>a -> [a]</text>
+<feedback><text><![CDATA[Incorrect. filter requires a predicate.]]></text></feedback>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name><text>Type of composition operator</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the type of the composition operator (.) ?]]></text>
+</questiontext>
+
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>(b -> c) -> (a -> b) -> a -> c</text>
+<feedback><text><![CDATA[Correct. The output of g must match the input of f.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>(a -> b) -> a -> b</text>
+<feedback><text><![CDATA[Incorrect. That is function application.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>a -> b -> c</text>
+<feedback><text><![CDATA[Incorrect. This is not composition.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>(a -> b) -> (b -> c)</text>
+<feedback><text><![CDATA[Incorrect. This type is incomplete.]]></text></feedback>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name><text>Type of zipWith</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the type of zipWith?]]></text>
+</questiontext>
+
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>(a -> b -> c) -> [a] -> [b] -> [c]</text>
+<feedback><text><![CDATA[Correct. zipWith combines two lists using a function.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>(a -> b) -> [a] -> [b]</text>
+<feedback><text><![CDATA[Incorrect. That is map.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[a] -> [b] -> [c]</text>
+<feedback><text><![CDATA[Incorrect. zipWith requires a function parameter.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>a -> [a]</text>
+<feedback><text><![CDATA[Incorrect. zipWith works on two lists.]]></text></feedback>
+</answer>
+</question>
+
+
+<question type="multichoice">
+<name><text>Type of $ operator</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the type of the operator ($) ?]]></text>
+</questiontext>
+
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>(a -> b) -> a -> b</text>
+<feedback><text><![CDATA[Correct. $ simply applies a function to a value.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>(b -> c) -> (a -> b) -> a -> c</text>
+<feedback><text><![CDATA[Incorrect. That is composition.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>(a -> b) -> [a] -> [b]</text>
+<feedback><text><![CDATA[Incorrect. That is map.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>a -> b -> c</text>
+<feedback><text><![CDATA[Incorrect. This is not the correct type.]]></text></feedback>
+</answer>
+</question>
+
+
+<!-- ================= CODE EVALUATION QUESTIONS ================= -->
+
+<!-- 10 examples -->
+
+<question type="multichoice">
+<name><text>map evaluation</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the result of:
+
+map (*2) [1,2,3] ]]></text>
+</questiontext>
+
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>[2,4,6]</text>
+<feedback><text><![CDATA[Correct. Each element is multiplied by 2.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[1,2,3]</text>
+<feedback><text><![CDATA[Incorrect. map transforms the elements.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[3,4,5]</text>
+<feedback><text><![CDATA[Incorrect. That would add 2.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[2,3,4]</text>
+<feedback><text><![CDATA[Incorrect. Only the first element is correct.]]></text></feedback>
+</answer>
+</question>
+
+<question type="multichoice">
+<name><text>filter evaluation</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the result of:
+
+filter odd [1,2,3,4,5] ]]></text>
+</questiontext>
+
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>[1,3,5]</text>
+<feedback><text><![CDATA[Correct. filter keeps odd numbers.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[2,4]</text>
+<feedback><text><![CDATA[Incorrect. These are even numbers.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[1,2,3]</text>
+<feedback><text><![CDATA[Incorrect. Only odd numbers remain.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[3,5]</text>
+<feedback><text><![CDATA[Incorrect. 1 should also appear.]]></text></feedback>
+</answer>
+</question>
+
+<!-- remaining evaluation questions -->
+
+<question type="multichoice">
+<name><text>zipWith evaluation</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the result of:
+
+zipWith (+) [1,2,3] [4,5,6] ]]></text>
+</questiontext>
+
+<shuffleanswers>true</shuffleanswers>
+<single>true</single>
+
+<answer fraction="100">
+<text>[5,7,9]</text>
+<feedback><text><![CDATA[Correct. Each pair of elements is added together.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[1,2,3,4,5,6]</text>
+<feedback><text><![CDATA[Incorrect. That would be concatenation.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[4,5,6]</text>
+<feedback><text><![CDATA[Incorrect. zipWith combines both lists.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text>[6,7,8]</text>
+<feedback><text><![CDATA[Incorrect. Each pair must be summed.]]></text></feedback>
+</answer>
+</question>
+
+</quiz>
