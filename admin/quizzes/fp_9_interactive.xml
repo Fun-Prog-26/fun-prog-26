@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+<!-- Question 1 -->
+<question type="multichoice">
+<name><text>Batch Programs</text></name>
+<questiontext format="html">
+<text><![CDATA[What best describes a <b>batch program</b>?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[A program that takes all input at the start and produces output at the end]]></text>
+<feedback><text><![CDATA[Correct. Batch programs receive all inputs first and produce outputs after processing.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[A program that continuously interacts with the user]]></text>
+<feedback><text><![CDATA[Incorrect. That describes an interactive program rather than a batch program.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[A program that always reads input from the keyboard]]></text>
+<feedback><text><![CDATA[Incorrect. Batch programs may read from files or other sources.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[A program that always uses IO actions]]></text>
+<feedback><text><![CDATA[Incorrect. Batch programs may consist entirely of pure functions.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 2 -->
+<question type="multichoice">
+<name><text>Interactive Programs</text></name>
+<questiontext format="html">
+<text><![CDATA[Why do interactive programs pose a challenge in Haskell?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[They involve side effects such as input and output]]></text>
+<feedback><text><![CDATA[Correct. Interactive programs interact with the outside world, which introduces side effects.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[They require recursion]]></text>
+<feedback><text><![CDATA[Incorrect. Recursion is common in Haskell but not specific to interactive programs.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[They require mutable variables]]></text>
+<feedback><text><![CDATA[Incorrect. Haskell avoids mutable variables even in interactive programs.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[They require multi-threading]]></text>
+<feedback><text><![CDATA[Incorrect. Interaction does not require concurrency.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 3 -->
+<question type="multichoice">
+<name><text>IO Type Meaning</text></name>
+<questiontext format="html">
+<text><![CDATA[What does the type <code>IO a</code> represent in Haskell?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[A description of an action that may perform I/O and produce a value of type a]]></text>
+<feedback><text><![CDATA[Correct. IO values describe actions that may perform effects and produce results.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[A function returning a value of type a]]></text>
+<feedback><text><![CDATA[Incorrect. IO describes an action rather than a pure function.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[A variable storing a value of type a]]></text>
+<feedback><text><![CDATA[Incorrect. IO values describe computations rather than storing values.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[A list of values of type a]]></text>
+<feedback><text><![CDATA[Incorrect. Lists are written as [a].]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 4 -->
+<question type="multichoice">
+<name><text>IO Unit Type</text></name>
+<questiontext format="html">
+<text><![CDATA[What does the type <code>IO ()</code> indicate?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[An action that performs effects but returns no meaningful value]]></text>
+<feedback><text><![CDATA[Correct. IO () represents actions whose result value is not important.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[An action returning a Boolean]]></text>
+<feedback><text><![CDATA[Incorrect. Boolean results would use IO Bool.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[A function returning an integer]]></text>
+<feedback><text><![CDATA[Incorrect. That would be IO Int.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[An action returning a tuple]]></text>
+<feedback><text><![CDATA[Incorrect. () represents the unit value, not a tuple with components.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 5 -->
+<question type="multichoice">
+<name><text>Type of getChar</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the type of <code>getChar</code>?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[IO Char]]></text>
+<feedback><text><![CDATA[Correct. getChar is an action that returns a character.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Char -> IO Char]]></text>
+<feedback><text><![CDATA[Incorrect. getChar does not require an input argument.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[String -> IO Char]]></text>
+<feedback><text><![CDATA[Incorrect. getChar simply reads a character.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[IO String]]></text>
+<feedback><text><![CDATA[Incorrect. getChar returns a single character, not a string.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 6 -->
+<question type="multichoice">
+<name><text>putChar Purpose</text></name>
+<questiontext format="html">
+<text><![CDATA[What does the action <code>putChar</code> do?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[Writes a character to the screen]]></text>
+<feedback><text><![CDATA[Correct. putChar outputs a character.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Reads a character from the keyboard]]></text>
+<feedback><text><![CDATA[Incorrect. That is done by getChar.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Converts a character to a string]]></text>
+<feedback><text><![CDATA[Incorrect. putChar performs output rather than conversion.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Returns a character without interaction]]></text>
+<feedback><text><![CDATA[Incorrect. putChar performs an output action.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 7 -->
+<question type="multichoice">
+<name><text>Meaning of &lt;-</text></name>
+<questiontext format="html">
+<text><![CDATA[In a <code>do</code> block, what does the operator <code>&lt;-</code> do?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[Extracts the result value from an IO action]]></text>
+<feedback><text><![CDATA[Correct. It performs the action and binds its result to a variable.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Defines a function]]></text>
+<feedback><text><![CDATA[Incorrect. Functions are defined using =.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Compares two values]]></text>
+<feedback><text><![CDATA[Incorrect. Comparison uses ==.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Creates recursion]]></text>
+<feedback><text><![CDATA[Incorrect. Recursion is unrelated to this operator.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 8 -->
+<question type="multichoice">
+<name><text>Return Function</text></name>
+<questiontext format="html">
+<text><![CDATA[What does the function <code>return</code> do in the IO context?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[Wraps a pure value into an IO action]]></text>
+<feedback><text><![CDATA[Correct. return converts a pure value into IO a.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Stops program execution]]></text>
+<feedback><text><![CDATA[Incorrect. return does not terminate execution.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Prints a value to the screen]]></text>
+<feedback><text><![CDATA[Incorrect. Printing requires putStr or putStrLn.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Reads a value from the keyboard]]></text>
+<feedback><text><![CDATA[Incorrect. Input actions include getLine or getChar.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 9 -->
+<question type="multichoice">
+<name><text>putStrLn Type</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the type of <code>putStrLn</code>?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[String -> IO ()]]></text>
+<feedback><text><![CDATA[Correct. putStrLn outputs a string followed by a newline.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[String -> String]]></text>
+<feedback><text><![CDATA[Incorrect. putStrLn performs an IO action.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[IO String]]></text>
+<feedback><text><![CDATA[Incorrect. It requires a string parameter.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[IO () -> String]]></text>
+<feedback><text><![CDATA[Incorrect. The type direction is incorrect.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 10 -->
+<question type="multichoice">
+<name><text>Sequencing Actions</text></name>
+<questiontext format="html">
+<text><![CDATA[Which keyword is used to sequence multiple IO actions in Haskell?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[do]]></text>
+<feedback><text><![CDATA[Correct. The do notation sequences IO actions.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[let]]></text>
+<feedback><text><![CDATA[Incorrect. let introduces local definitions.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[case]]></text>
+<feedback><text><![CDATA[Incorrect. case performs pattern matching.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[where]]></text>
+<feedback><text><![CDATA[Incorrect. where defines local bindings.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 11 -->
+<question type="multichoice">
+<name><text>Program Entry Point</text></name>
+<questiontext format="html">
+<text><![CDATA[Which value does the Haskell runtime execute to start a program?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[main]]></text>
+<feedback><text><![CDATA[Correct. main :: IO () is the entry point of a Haskell program.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[start]]></text>
+<feedback><text><![CDATA[Incorrect. Haskell programs start with main.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[run]]></text>
+<feedback><text><![CDATA[Incorrect. run is not a standard entry point.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[init]]></text>
+<feedback><text><![CDATA[Incorrect. init is a list function.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 12 -->
+<question type="multichoice">
+<name><text>Meaning of read</text></name>
+<questiontext format="html">
+<text><![CDATA[What does the function <code>read</code> do in Haskell?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[Parses a string into a value of a specified type]]></text>
+<feedback><text><![CDATA[Correct. read converts text into a value such as Int or Integer.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Converts values into strings]]></text>
+<feedback><text><![CDATA[Incorrect. That is done by show.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Reads input from the keyboard]]></text>
+<feedback><text><![CDATA[Incorrect. Input is read using getLine or getChar.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Prints output to the screen]]></text>
+<feedback><text><![CDATA[Incorrect. Printing uses putStr or putStrLn.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 13 -->
+<question type="multichoice">
+<name><text>Pure Functions</text></name>
+<questiontext format="html">
+<text><![CDATA[Which statement about <b>pure functions</b> in Haskell is correct?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[They always produce the same result for the same inputs]]></text>
+<feedback><text><![CDATA[Correct. Pure functions have no side effects and deterministic results.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[They modify global variables]]></text>
+<feedback><text><![CDATA[Incorrect. Pure functions do not modify state.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[They always perform IO operations]]></text>
+<feedback><text><![CDATA[Incorrect. IO operations are handled separately via IO actions.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[They require the IO type]]></text>
+<feedback><text><![CDATA[Incorrect. Pure functions do not involve IO types.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 14 -->
+<question type="multichoice">
+<name><text>Show Function</text></name>
+<questiontext format="html">
+<text><![CDATA[What is the purpose of the function <code>show</code>?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[Convert a value to its string representation]]></text>
+<feedback><text><![CDATA[Correct. show converts values like Int into String so they can be printed.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Convert a string to an integer]]></text>
+<feedback><text><![CDATA[Incorrect. That is done by read.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Read keyboard input]]></text>
+<feedback><text><![CDATA[Incorrect. Input uses getLine or getChar.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[Write a character to the screen]]></text>
+<feedback><text><![CDATA[Incorrect. putChar performs that task.]]></text></feedback>
+</answer>
+</question>
+
+<!-- Question 15 -->
+<question type="multichoice">
+<name><text>Effect Execution</text></name>
+<questiontext format="html">
+<text><![CDATA[When are the effects of an IO action actually performed?]]></text>
+</questiontext>
+<shuffleanswers>true</shuffleanswers>
+
+<answer fraction="100">
+<text><![CDATA[When the action is executed by the runtime system]]></text>
+<feedback><text><![CDATA[Correct. IO actions describe computations that are executed by the runtime (typically starting from main).]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[When the expression is defined]]></text>
+<feedback><text><![CDATA[Incorrect. Defining an action does not perform it.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[When the program is compiled]]></text>
+<feedback><text><![CDATA[Incorrect. Compilation does not run IO actions.]]></text></feedback>
+</answer>
+
+<answer fraction="0">
+<text><![CDATA[When the variable is declared]]></text>
+<feedback><text><![CDATA[Incorrect. Declaration does not trigger execution.]]></text></feedback>
+</answer>
+</question>
+
+</quiz>
