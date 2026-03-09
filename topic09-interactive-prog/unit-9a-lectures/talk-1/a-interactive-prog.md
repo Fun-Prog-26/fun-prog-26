@@ -1,6 +1,6 @@
 ---
  icon: 
-    type: vscode-icons:file-type-light-io
+    type: lightcoral
     color: lightcoral
 ---
 # 09: Interactive Programming
