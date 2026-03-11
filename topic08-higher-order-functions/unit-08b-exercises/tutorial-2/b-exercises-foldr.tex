@@ -55,7 +55,7 @@ Using the higher-order function $foldr$,  define a function $sumsq$ which takes 
 integer $n$ as its argument and returns the sum of the squares of the first $n$
 integers. That is to say,
 $sumsq n = 1^{2} + 2^{2} + 3^{2} + . . . + n^{2} $. \\
-(answer given to start you off)
+
 \end{exercise}
 
 \begin{solution}
@@ -78,16 +78,6 @@ lengthr = foldr (\x y -> 1 + y) 0
 
 \end{solution}
 
-\begin{exercise}  
-Define $minlist$, which returns the smallest integer in a non-empty list of integers,
-using $foldr1$ . ($foldr1$ is a Prelude function - look it up yourself or continue and come back to this)
-\end{exercise} 
-
-\begin{solution}
-\begin{lstlisting}[language=Haskell]
-minlistr ::  [Int] -> Int
-minlistr  = foldr1 min\end{lstlisting}
-\end{solution}
 
 \pagebreak
 \begin{exercise} 
