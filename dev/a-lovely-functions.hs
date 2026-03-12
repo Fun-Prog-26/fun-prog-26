@@ -18,3 +18,9 @@ clamp = max 0 . min 1
     
 minlistr ::  [Int] -> Int
 minlistr  = foldr min maxBound
+
+repeat' :: a -> [a]
+repeat' x = xs where xs = x:xs
+
+repeat'' :: a -> [a]
+repeat'' x = x : repeat'' x
