@@ -89,19 +89,16 @@ Write out the evaluation of the following Expressions
 
 \begin{enumerate}
   \item
-  \begin{lstlisting}[language=Haskell]
-    Val 1
-  \end{lstlisting}
+   \textbf{\textit{Val 1}}
+ 
+  \item
+
+    \textbf{\textit{Add (Val 1) (Val 2) }} 
 
   \item
-  \begin{lstlisting}[language=Haskell]
-    Add (Val 1) (Val 2) 
-  \end{lstlisting}
-  
-  \item
-  \begin{lstlisting}[language=Haskell]
-    (Add (Add (Val 2) (Val 3) ) (Val 4))
-  \end{lstlisting}
+
+   \textbf{\textit{(Add (Add (Val 2) (Val 3) ) (Val 4))}}
+
 \end{enumerate}
 \end{exercise}
 \begin{solution}
@@ -147,34 +144,8 @@ Write out the evaluation of the following Expressions
 \end{enumerate}  
 
 \end{solution}
-\begin{exercise}
-The abstract machine (as per above) only implements \textbf{\textit{additon}} . Show how you would extend this implementation to implement mutliplication. 
-\end{exercise}
 
-\begin{solution}
-  The abstract machine is extended as follows
-\begin{lstlisting}[language=Haskell]
-data Expr = Val Int | Add Expr Expr | Mult Expr Expr
-data Op = EVALA Expr | EVALM Expr | ADD Int | MULT Int
 
-type Cont = [Op]
-
-eval :: Expr -> Cont -> Int
-eval (Val n)    c = exec c n
-eval (Add x y)  c = eval x (EVALA y: c)
-eval (Mult x y) c = eval x (EVALM y: c)
-
-exec :: Cont -> Int -> Int 
-exec []      n = n
-exec (EVALA y: c)   n = eval y (ADD n: c)
-exec (EVALM y: c)   n = eval y (MULT n:c) 
-exec (ADD n : c)    m = exec c (n + m)
-exec (MULT n : c)   m = exec c (n * m)
-
-val :: Expr -> Int
-val e = eval e []
-\end{lstlisting}
-\end{solution}
 
 \begin{exercise}
 (Using the Nat example from earlier) \\
@@ -207,6 +178,7 @@ occurs :: Ord a => a -> Tree a -> Bool
 \end{lstlisting}
 for search trees. Why is this new definition more efficient that the original version? 
 \end{exercise}
+
 \begin{solution}
 \begin{lstlisting}[language=Haskell]
 occurs x (Leaf y)     = x == y
@@ -217,7 +189,6 @@ occurs x (Node l y r) = case compare x y of
  \end{lstlisting}
                            
 This version is more efficient because it only requires one comparison between x and y for each node, whereas the previous version may require two.
-\pagebreak
 \end{solution}
 \begin{exercise}
 Consider the following type of binary trees: \\
