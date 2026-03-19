@@ -7,7 +7,7 @@
 \usepackage{color}
 \usepackage{todo}
 
-\usepackage[printsolution=false]{exercises}
+\usepackage[printsolution=true]{exercises}
 % for exercise 
 \def\AnswerName{Solution to Exercise}
 
@@ -90,6 +90,7 @@ Using list comprehension define the following list
  [(x,x) | x <- [1..4]]
 \end{lstlisting}
 \end{solution}
+\pagebreak
 \begin{exercise}
 Using list comprehension define the following list
 \begin{lstlisting}
@@ -172,7 +173,7 @@ Write down the values as defined in the following list: Check your solution.
 \end{lstlisting}
 \end{solution}
 
-%%
+\pagebreak
 \begin{exercise}
 Give a  definition of a function 
 \begin{lstlisting}
@@ -207,7 +208,7 @@ capitalize :: String -> String
 capitalize xs = [toUpper(c) | c<- xs ]
 \end{lstlisting}
 \end{solution}
-\pagebreak
+
 %%
 \begin{exercise}
 Using a list comprehension, write a function \textbf{sigma} that calculates the sum of 
@@ -223,6 +224,7 @@ sigma = sum [x^2 | x <- [1..100]]
 \end{lstlisting}
 \end{solution}
 %%
+\pagebreak
 \begin{exercise}
 Using a list comprehension,write a function \textbf{sigma'}
 \begin{lstlisting}[language=Haskell]
@@ -258,6 +260,8 @@ elem':: Integer -> [Integer] -> Bool  --elem is already defined in Prelude
 which is True is the Integer is an element of the list, and False otherwise. 
 \end{exercise}
 
+\pagebreak
+
 \begin{solution}
 \begin{lstlisting}
 matches :: Eq a => a -> [a] -> [a]
@@ -274,7 +278,7 @@ myElem' x xs = patterns x xs /=[]
 
 \end{solution}
 
-\pagebreak
+
 \begin{exercise}
 Suppose that a \textit{coordinate grid} of size $m$ \ $x$ \  $n$ is given by the list of all pairs $(x,y)$ of integers such that 
 $ 0 \leq x \leq m $ and $ 0 \leq  y \leq n$. 
@@ -298,7 +302,7 @@ that returns a coordinate grid of a given size. For example:
   \end{lstlisting}
   
   \end{solution}
-
+\pagebreak
 \begin{exercise}
 Using a list comprehension and the function \textbf{grid} above, define a function 
 \begin{lstlisting}

@@ -4,7 +4,7 @@
 \usepackage{fancyhdr}
 \usepackage{listings}
 \usepackage{graphicx}
-\usepackage[printsolution=false]{exercises}
+\usepackage[printsolution=true]{exercises}
 \usepackage{todonotes}  %--put in noanswer when solutions are not to be shown
 \usepackage{color}
 \definecolor{dkgreen}{rgb}{0,0.6,0}
@@ -90,7 +90,7 @@ lottaBiggest'  = replicate 4  . maximum
           \end{lstlisting}
 \end{solution}
 
-
+\pagebreak
 \begin{exercise} 
 Write \textbf{powers} that takes a number and creates a list of that number squared, cubed, and quadrupled. 
 \begin{lstlisting}[language=Haskell]
@@ -122,7 +122,7 @@ process = sum . map double . filter (>0)
 \end{lstlisting}
 \end{solution}
 
-\pagebreak
+
 \begin{exercise}
   Given 
   \begin{lstlisting}
@@ -138,7 +138,7 @@ compute :: Int -> [Int] -> Int
 compute x = length . take x . filter even
 \end{lstlisting}
 \end{solution}
-
+\pagebreak
 \begin{exercise}
 Assume people are dining. We have a list of tip percents (assume people tip at different rates):\\
 \begin{lstlisting}[language=Haskell]
