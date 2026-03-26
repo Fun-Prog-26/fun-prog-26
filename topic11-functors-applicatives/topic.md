@@ -1,6 +1,6 @@
 ---
 icon: 
-    type: logos:compose
+    type: tdesign:abstract
     color: lightsalmon
 ---
 # 11: SemiGroups , Monoids, Functors, Applicatives
