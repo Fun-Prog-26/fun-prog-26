@@ -2,6 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
 import Catalogue
+import Lib (parseCatalogue, writeCatalogueMarkdown)
 import Text.XML
 import Text.XML.Cursor
 import qualified Data.Text as T
@@ -16,3 +17,5 @@ main = do
     doc <- Text.XML.readFile def "books.xml"
     let catalogue = parseCatalogue doc
     print catalogue
+    writeCatalogueMarkdown "catalogue.md" catalogue
+    putStrLn "Written to catalogue.md"

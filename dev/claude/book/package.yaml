@@ -1,4 +1,4 @@
-name:                bookxml
+name:                book
 version:             0.1.0.0
 github:              "githubuser/bookxml"
 license:             BSD-3-Clause
@@ -36,10 +36,10 @@ ghc-options:
 library:
   source-dirs: src
   dependencies:
-
   - text
   - containers
   - xml-conduit
+  - xml
   - conduit
 
 executables:
@@ -51,10 +51,8 @@ executables:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - bookxml
-    - text
-    - xml-conduit
-    - containers
+    - book
+    - xml 
 
 tests:
   bookxml-test:
@@ -65,4 +63,4 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - bookxml
+    - book

@@ -1,0 +1,35 @@
+<catalogue>
+  <book>
+    <isbn>9780000000002</isbn>
+    <title>Learn Haskell</title>
+    <subtitle>Type-safe wizardry</subtitle>
+    <authors>
+      <author>
+        <id>a1</id>
+        <name>Mairead Example</name>
+      </author>
+      <author>
+        <id>a2</id>
+        <name>Co Author</name>
+      </author>
+    </authors>
+    <published>
+      <year>2024</year>
+    </published>
+  </book>
+
+  <book>
+    <isbn>9780000000003</isbn>
+    <title>Streaming XML</title>
+    <subtitle></subtitle>
+    <authors>
+      <author>
+        <id>a3</id>
+        <name>Someone Else</name>
+      </author>
+    </authors>
+    <published>
+      <year>2023</year>
+    </published>
+  </book>
+</catalogue>

@@ -4,7 +4,7 @@
 \usepackage{fancyhdr}
 \usepackage{listings}
 \usepackage{graphicx}
-\usepackage[printsolution=true]{exercises}
+\usepackage[printsolution=false]{exercises}
 %% Change this for title information 
 \newcommand\ExTitle{Functors and I/O}
 
@@ -127,7 +127,7 @@ sumInts n s
        else return s     
 \end{lstlisting}
 \end{solution}
-
+\pagebreak
 \begin{exercise}
 \begin{enumerate}
 \item
@@ -211,6 +211,7 @@ Given the type definition
 \begin{lstlisting}[language=Haskell]
   	data Result a = Succeed a | Fail	
 \end{lstlisting}
+
 show how \textit{\textbf{Result}}  can be made into a monadic type.
 \end{exercise}
 

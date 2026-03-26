@@ -28,4 +28,4 @@ data Book = Book
 
 newtype Catalogue = Catalogue
   { catalogueBooks :: [Book]
-  } 
+  }  deriving (Show, Eq, Generic)
