@@ -1,4 +1,4 @@
-# Changelog for `book-md`
+# Changelog for `xmlnotes`
 
 All notable changes to this project will be documented in this file.
 

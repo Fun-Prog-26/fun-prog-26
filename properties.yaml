@@ -22,6 +22,7 @@ ignore         :
 #- topic11-functors-applicatives
 - topic12-monads
 - topic99-scaffolding
-- topic13-wip 
+- topic13-parsing
+- topic14-wip 
 - dev 
 - admin

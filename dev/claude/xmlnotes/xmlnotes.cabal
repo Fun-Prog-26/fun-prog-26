@@ -1,14 +1,14 @@
 cabal-version: 2.2
 
--- This file has been generated from package.yaml by hpack version 0.37.0.
+-- This file has been generated from package.yaml by hpack version 0.39.1.
 --
 -- see: https://github.com/sol/hpack
 
-name:           book-md
+name:           xmlnotes
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/book-md#readme>
-homepage:       https://github.com/githubuser/book-md#readme
-bug-reports:    https://github.com/githubuser/book-md/issues
+description:    Please see the README on GitHub at <https://github.com/githubuser/xmlnotes#readme>
+homepage:       https://github.com/githubuser/xmlnotes#readme
+bug-reports:    https://github.com/githubuser/xmlnotes/issues
 author:         Author name here
 maintainer:     example@example.com
 copyright:      2026 Author name here
@@ -21,20 +21,15 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/book-md
+  location: https://github.com/githubuser/xmlnotes
 
 library
   exposed-modules:
-      ADTs
-      Catalogue
       Lib
-      Parser
-      PCombinators
-      XMLHelpers
   other-modules:
-      Paths_book_md
+      Paths_xmlnotes
   autogen-modules:
-      Paths_book_md
+      Paths_xmlnotes
   hs-source-dirs:
       src
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
@@ -42,31 +37,31 @@ library
       base >=4.7 && <5
   default-language: Haskell2010
 
-executable book-md-exe
+executable xmlnotes-exe
   main-is: Main.hs
   other-modules:
-      Paths_book_md
+      Paths_xmlnotes
   autogen-modules:
-      Paths_book_md
+      Paths_xmlnotes
   hs-source-dirs:
       app
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , book-md
+    , xmlnotes
   default-language: Haskell2010
 
-test-suite book-md-test
+test-suite xmlnotes-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_book_md
+      Paths_xmlnotes
   autogen-modules:
-      Paths_book_md
+      Paths_xmlnotes
   hs-source-dirs:
       test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
-    , book-md
+    , xmlnotes
   default-language: Haskell2010
