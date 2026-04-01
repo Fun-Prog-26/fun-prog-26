@@ -1,0 +1,7 @@
+---
+icon:
+    type: token:monad
+    color : darkturquoise
+---
+# 12.1: Monads
+Looking at Monads, Equational properties, Binding, do notation. 
