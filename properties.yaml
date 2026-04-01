@@ -20,7 +20,7 @@ ignore         :
 #- topic09-interactive-prog
 #- topic10-declaring-types-and-classes
 #- topic11-functors-applicatives
-- topic12-monads
+#- topic12-monads
 - topic99-scaffolding
 - topic13-parsing
 - topic14-wip 
