@@ -269,3 +269,9 @@ main = do
   putStrLn "  Done."
   putStrLn $ replicate 60 '═'
   putStrLn ""
+
+  putStrLn "  Mairead Meagher  |  Functional Programming  |  April  2026"
+  print $ runParser (charP 'a') "abc"
+  print $ runParser (charP 'x') "abc"
+
+  putStrLn ""

@@ -3,5 +3,5 @@ icon:
    type: arcticons:parsec
    color: steelblue
 ---
-# 13: Parsing  in Haskell
+# 13.1: Parsing  in Haskell
 Parsers in Haskell
