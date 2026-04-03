@@ -21,8 +21,9 @@ ignore         :
 #- topic10-declaring-types-and-classes
 #- topic11-functors-applicatives
 #- topic12-monads
+
+#- topic13-parsing
 - topic99-scaffolding
-- topic13-parsing
 - topic14-wip 
 - dev 
 - admin
