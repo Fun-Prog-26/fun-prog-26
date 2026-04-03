@@ -1,5 +1,6 @@
 ---
- icon : 
+order : 2
+icon : 
    type : eos-icons:project
    color : lightseagreen
 ---
