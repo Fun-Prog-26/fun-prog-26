@@ -1,1 +1,1 @@
-Final Written Exam(50%)
+Scaffolding for Programming Assignment
