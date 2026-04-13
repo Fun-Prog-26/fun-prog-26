@@ -23,6 +23,7 @@ ignore         :
 #- topic12-monads
 
 #- topic13-parsing
+#topic14-invariants-testing
 - topic99-scaffolding
 - topic14-wip 
 - dev 
